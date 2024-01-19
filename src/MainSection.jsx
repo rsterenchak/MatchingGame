@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css';
+import HomePage from './HomePage.jsx'
+import PlayPage from './PlayPage.jsx'
 
 export default function MainSection() {
 
@@ -10,11 +12,12 @@ export default function MainSection() {
 
 
 
-  
+
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+
+
+    <HomePage />
+
+    
   );
 }

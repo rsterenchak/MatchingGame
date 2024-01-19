@@ -14,3 +14,63 @@ h1 {
   font-weight: 800;
   font-size: 1.5rem;
 }
+
+.outerSection {
+  display: grid;
+  grid-template-rows: 1fr 3fr 2fr 1fr;
+  height: 100%;
+  margin: 10px;
+  border: 1px solid red;
+
+}
+
+
+
+.navSection {
+  display: flex;
+  flex-direction: row;
+  
+  border: 1px solid red;
+}
+
+.topColumn1 {
+  width: 50%;
+  border: 1px solid green;
+}
+
+
+.topColumn2 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 50%;
+  border: 1px solid green;
+}
+
+.musicBlock {
+  width: 50px;
+  height: 45px;
+
+  border: 1px solid blue;
+}
+
+.portfolioBlock {
+  width: 200px;
+  height: 45px;
+
+  border: 1px solid blue;
+}
+
+.logoSection {
+
+  border: 1px solid red;
+}
+
+.logoSection2 {
+
+  border: 1px solid red;
+}
+
+.inputSection {
+
+  border: 1px solid red;
+}

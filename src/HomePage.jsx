@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-export default function MainSection() {
+export default function HomePage() {
 
 
 
@@ -12,9 +12,35 @@ export default function MainSection() {
 
   
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+
+    <div className='outerSection'>
+      
+      <div className='navSection'>
+
+        <div className='topColumn1'>
+
+            <div className='musicBlock'></div>
+
+
+        </div>
+        <div className='topColumn2'>
+
+
+            <div className='portfolioBlock'></div>
+
+
+        </div>
+
+
+      </div>
+      
+      <div className='logoSection'></div>
+      
+      <div className='logoSection2'></div>
+      
+      <div className='inputSection'></div>
+
     </div>
+  
   );
 }
