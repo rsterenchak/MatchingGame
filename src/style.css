@@ -23,15 +23,15 @@ h1 {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: red;
+
 }
 
 .outerSection {
   display: grid;
-  grid-template-rows: 1fr 2.5fr 2fr 1.5fr;
+  grid-template-rows: 1fr 2.5fr 1.5fr 1.5fr;
   height: 100%;
   margin: 1rem;
-  border: 1px solid red;
+
 
 }
 
@@ -41,12 +41,11 @@ h1 {
   display: flex;
   flex-direction: row;
   
-  border: 1px solid red;
 }
 
 .topColumn1 {
   width: 50%;
-  border: 1px solid green;
+
 }
 
 
@@ -54,27 +53,57 @@ h1 {
   display: flex;
   flex-direction: row-reverse;
   width: 50%;
-  border: 1px solid green;
+
 }
 
 .musicBlock {
-  width: 50px;
-  height: 45px;
+  display: flex;
+  border-radius: 50%;
 
-  border: 1px solid blue;
+  max-width: 60px;
+  max-height: 55px;
+  justify-content: center;
+  border: 3px solid black;
+  background-color: rgb(232, 232, 0);
+  cursor: pointer;
+}
+
+.musicIcon {
+  margin: 5px;
+
 }
 
 .portfolioBlock {
-  width: 200px;
-  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 300px;
+  height: 70px;
+  gap: 10px;
 
-  border: 1px solid blue;
+}
+
+.portfolioText {
+  
+  font-size: 24px;
+  cursor: default;
+}
+
+.portfolioIcon {
+  
+  content: '@rsterenchak';
+  cursor: pointer;
+}
+
+.gitIcon {
+  width: 45px;
 }
 
 .logoSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   border: 1px solid red;
   object-fit: contain;
@@ -82,7 +111,7 @@ h1 {
 
 .logoContainer {
 
-  min-height: 40vh;
+  min-height: 30vh;
   min-width: 90vw;
 
   border: 1px solid blue;
@@ -98,19 +127,16 @@ h1 {
 .logoSection2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border: 1px solid red;
   object-fit: contain;
 }
 
 .logoContainer2 {
-  min-height: 600px;
+  min-height: 25vh;
   min-width: 55vw;
-
-
-  border: 1px solid blue;
-
+  margin-left: 90px;
   
   background-image: url('./assets/MatchingGameTitle.svg') ;
   background-repeat: no-repeat;
@@ -123,17 +149,58 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+
 }
 
 .fightButton {
-  min-height: 100px;
-  min-width: 450px;
+  min-height: 55px;
+  min-width: 220px;
   border-radius: 45px;
   background-color: rgb(232, 232, 0);
-  border: 1px solid blue;
-
+  cursor: pointer;
 
   font-size: 50px;
 }
 
+
+@media (max-width: 1160px){
+
+  .logoContainer2 {
+
+    margin-left: 55px;
+
+  }
+  
+  .fightButton {
+    min-height: 45px;
+    min-width: 180px;
+    max-height: 45px;
+    max-width: 180px;    
+
+  }  
+
+
+
+}
+
+@media (max-height: 1100px){
+
+  .logoContainer2 {
+
+    margin-left: 55px;
+
+
+  }
+
+  .fightButton {
+    min-height: 45px;
+    min-width: 180px;
+    max-height: 45px;
+    max-width: 180px;
+
+  }  
+  
+
+
+
+}
