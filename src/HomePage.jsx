@@ -4,6 +4,7 @@ import musicIcon from './assets/musical-notes.svg'
 import gitIcon from './assets/github.svg'
 import fightButton from './assets/FightButton.svg'
 
+
 export default function HomePage() {
 
 
@@ -68,7 +69,13 @@ export default function HomePage() {
           
           <div className='inputSection'>
 
-            <img className='fightButton' src={fightButton}></img>
+            <div className='fightButton'>
+
+            <svg className='svg-element' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30">
+              <text x="50%" y="50%" className="svg-text" alignmentBaseline="middle" textAnchor="middle">Fight</text>
+            </svg>
+
+            </div>
 
           </div>
 
