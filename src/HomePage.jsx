@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import musicIcon from './assets/musical-notes.svg'
 import gitIcon from './assets/github.svg'
+import fightButton from './assets/FightButton.svg'
 
 export default function HomePage() {
 
@@ -35,7 +36,7 @@ export default function HomePage() {
 
                 <div className='portfolioBlock'>
 
-                  <div className='portfolioText'></div>
+                  <div className='portfolioText'>@rsterenchak</div>
 
                   <div className='portfolioIcon'>
 
@@ -67,7 +68,7 @@ export default function HomePage() {
           
           <div className='inputSection'>
 
-            <div className='fightButton'></div>
+            <img className='fightButton' src={fightButton}></img>
 
           </div>
 

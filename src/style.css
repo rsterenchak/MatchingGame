@@ -86,13 +86,14 @@ h1 {
 
 .portfolioText {
   
-  font-size: 24px;
+  font-size: 22px;
   cursor: default;
+  content: '@rsterenchak';
+
 }
 
 .portfolioIcon {
   
-  content: '@rsterenchak';
   cursor: pointer;
 }
 
@@ -105,16 +106,13 @@ h1 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  border: 1px solid red;
   object-fit: contain;
 }
 
 .logoContainer {
 
-  min-height: 30vh;
+  min-height: 400px;
   min-width: 90vw;
-
-  border: 1px solid blue;
 
   background-image: url('./assets/dragon-ball-image.png') ;
   background-repeat: no-repeat;
@@ -129,15 +127,17 @@ h1 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid red;
+
   object-fit: contain;
 }
 
 .logoContainer2 {
-  min-height: 25vh;
+  min-height: 350px;
   min-width: 55vw;
   margin-left: 90px;
-  
+  position: absolute;
+  margin-top: -55px;
+
   background-image: url('./assets/MatchingGameTitle.svg') ;
   background-repeat: no-repeat;
   background-position: center;
@@ -153,36 +153,25 @@ h1 {
 }
 
 .fightButton {
-  min-height: 55px;
-  min-width: 220px;
-  border-radius: 45px;
-  background-color: rgb(232, 232, 0);
+  height: 65px;
+  width: 160px;
   cursor: pointer;
-
   font-size: 50px;
 }
 
-
-@media (max-width: 1160px){
+/** Web Warping */
+@media (max-width: 110px){
 
   .logoContainer2 {
 
     margin-left: 55px;
 
   }
-  
-  .fightButton {
-    min-height: 45px;
-    min-width: 180px;
-    max-height: 45px;
-    max-width: 180px;    
-
-  }  
-
 
 
 }
 
+/** Web Warping */
 @media (max-height: 1100px){
 
   .logoContainer2 {
@@ -191,16 +180,99 @@ h1 {
 
 
   }
+  
+}
+
+/** Mobile Warping */
+
+@media screen and (max-width: 900px) {
+
+  .outerSection {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 8fr;
+    height: 100%;
+    margin: 1rem;
+  
+  
+  }
+
+  .logoContainer {
+
+    min-height: 200px;
+    min-width: 90vw;
+  
+    background-image: url('./assets/dragon-ball-image.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  
+  }
+
+  .logoContainer2 {
+    min-height: 220px;
+    min-width: 55vw;
+    position: absolute;
+    z-index: 0;
+    margin-top: -45px;
+    background-image: url('./assets/MatchingGameTitle.svg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }  
+
 
   .fightButton {
-    min-height: 45px;
-    min-width: 180px;
-    max-height: 45px;
-    max-width: 180px;
+    height: auto;
+    width: 220px;
+    cursor: pointer;
+    font-size: 50px;
+  }
 
-  }  
+
+}
+
+@media screen and (max-height: 1100px) {
+
+  .outerSection {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 8fr;
+    height: 100%;
+    margin: 1rem;
   
+  
+  }
 
+  .logoContainer {
+    
+    min-height: 300px;
+    min-width: 90vw;
+  
+    background-image: url('./assets/dragon-ball-image.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  
+  }
+
+  .logoContainer2 {
+    min-height: 220px;
+    min-width: 55vw;
+    position: absolute;
+    z-index: 0;
+    margin-top: -45px;
+    background-image: url('./assets/MatchingGameTitle.svg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }  
+
+
+  .fightButton {
+    height: auto;
+    width: 220px;
+    cursor: pointer;
+    font-size: 50px;
+  }
 
 
 }
