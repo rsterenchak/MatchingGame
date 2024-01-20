@@ -14,6 +14,8 @@ body {
   
 }
 
+
+
 h1 {
   font-weight: 800;
   font-size: 1.5rem;
@@ -28,7 +30,7 @@ h1 {
 
 .outerSection {
   display: grid;
-  grid-template-rows: 1fr 2.5fr 1.5fr 1.5fr;
+  grid-template-rows: 1fr 2fr 1.5fr 1.5fr;
   height: 100%;
   margin: 1rem;
 
@@ -233,6 +235,11 @@ h1 {
 
 @media screen and (max-height: 1100px) {
 
+  body {
+    background-size: 2000px;
+
+  }
+
   .outerSection {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 8fr;
@@ -246,7 +253,7 @@ h1 {
     
     min-height: 300px;
     min-width: 90vw;
-  
+    
     background-image: url('./assets/dragon-ball-image.png') ;
     background-repeat: no-repeat;
     background-position: center;
@@ -266,6 +273,15 @@ h1 {
     background-size: contain;
   }  
 
+
+  .inputSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    height: 70vh
+  }
 
   .fightButton {
     height: auto;
