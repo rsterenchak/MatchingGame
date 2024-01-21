@@ -1,6 +1,7 @@
 import React from 'react';
-import './style2.css';
+import './style.css';
 import musicIcon from './assets/musical-notes.svg'
+import planetIcon from './assets/planet.svg'
 import gitIcon from './assets/github.svg'
 import fightButton from './assets/FightButton.svg'
 
@@ -16,60 +17,63 @@ export default function PlayPage() {
   
   return (
 
+    <div className='playSection'>
 
-    <div className='outerSection'>
-          
-      <div className='navSection'>
+      <div className='outerSection'>
+            
+        <div className='navSection'>
 
-        <div className='topColumn1'>
+          <div className='topColumn3'>
 
-            <div className='musicBlock'>
-              
-              <img className='musicIcon' src={musicIcon} ></img>
+              <div className='musicBlock2'>
+                
+                <img className='musicIcon2' src={musicIcon} ></img>
 
-            </div>
+              </div>
 
-            <div className='musicBlock2'>
-              
-              <img className='musicIcon2' src={musicIcon} ></img>
-
-            </div>
-
-
-        </div>
-        <div className='topColumn2'>
-
-
-            <div className='portfolioBlock'>
-
-              <div className='portfolioText'>@rsterenchak</div>
-
-              <div className='portfolioIcon'>
-
-                <img className='gitIcon' src={gitIcon}></img>
+              <div className='musicBlock3'>
+                
+                <img className='musicIcon3' src={planetIcon} ></img>
 
               </div>
 
 
-            </div>
+          </div>
+          <div className='topColumn4'>
+
+
+              <div className='portfolioBlock'>
+
+                <div className='portfolioText'>@rsterenchak</div>
+
+                <div className='portfolioIcon'>
+
+                  <img className='gitIcon' src={gitIcon}></img>
+
+                </div>
+
+
+              </div>
+
+
+          </div>
 
 
         </div>
+        
+        <div className='logoSection'>
 
 
-      </div>
-      
-      <div className='logoSection'>
+        </div>
+        
+        <div className='logoSection2'>
 
 
-      </div>
-      
-      <div className='logoSection2'>
+        </div>
+        
+        <div className='inputSection'>
 
-
-      </div>
-      
-      <div className='inputSection'>
+        </div>
 
       </div>
 

@@ -17,6 +17,7 @@ export default function HomePage() {
   
   return (
 
+      <div className='homeSection'>
 
         <div className='outerSection'>
           
@@ -80,6 +81,7 @@ export default function HomePage() {
           </div>
 
         </div>
-
+        
+      </div>
   );
 }
