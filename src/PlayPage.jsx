@@ -19,9 +19,9 @@ export default function PlayPage() {
 
     <div className='playSection'>
 
-      <div className='outerSection'>
+      <div className='outerSection2'>
             
-        <div className='navSection'>
+        <div className='navSection2'>
 
           <div className='topColumn3'>
 
@@ -42,11 +42,11 @@ export default function PlayPage() {
           <div className='topColumn4'>
 
 
-              <div className='portfolioBlock'>
+              <div className='portfolioBlock2'>
 
-                <div className='portfolioText'>@rsterenchak</div>
+                <div className='portfolioText2'>@rsterenchak</div>
 
-                <div className='portfolioIcon'>
+                <div className='portfolioIcon2'>
 
                   <img className='gitIcon' src={gitIcon}></img>
 
@@ -61,17 +61,17 @@ export default function PlayPage() {
 
         </div>
         
-        <div className='logoSection'>
+        <div className='logoSection3'>
 
 
         </div>
         
-        <div className='logoSection2'>
+        <div className='logoSection4'>
 
 
         </div>
         
-        <div className='inputSection'>
+        <div className='inputSection2'>
 
         </div>
 
