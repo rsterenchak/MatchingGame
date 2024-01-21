@@ -14,8 +14,9 @@ export default function HomePage({
 
   const boxStyle = {
     backgroundImage: `url(${background})`,
+    backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
   }
 
 
