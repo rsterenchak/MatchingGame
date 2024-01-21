@@ -17,11 +17,12 @@ export default function MainSection() {
   return (
 
 
+    <>
 
+      {/* <HomePage /> */}
+      <PlayPage />
 
-    <HomePage />
-
-
+    </>
     
   );
 }
