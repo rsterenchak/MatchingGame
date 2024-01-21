@@ -374,7 +374,8 @@ h1 {
 }
 
 
-/** Web Warping */
+
+/** Web HomePage Warping */
 @media (max-width: 1100px){
 
   .logoContainer2 {
@@ -386,7 +387,7 @@ h1 {
 
 }
 
-/** Web Warping */
+/** Web HomePage Warping */
 @media (max-height: 1100px){
 
   .logoContainer2 {
@@ -398,7 +399,7 @@ h1 {
   
 }
 
-/** Mobile Warping */
+/** Mobile HomePage Warping */
 
 @media screen and (max-width: 1060px) {
 
@@ -505,3 +506,6 @@ h1 {
 
 
 }
+
+
+
