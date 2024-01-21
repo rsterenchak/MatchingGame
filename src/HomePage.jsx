@@ -2,22 +2,31 @@ import React from 'react';
 import './style.css';
 import musicIcon from './assets/musical-notes.svg'
 import gitIcon from './assets/github.svg'
-import fightButton from './assets/FightButton.svg'
 
 
-export default function HomePage() {
+export default function HomePage({
+  background
+
+}) {
 
 
 
 
-
+  const boxStyle = {
+    backgroundImage: `url(${background})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover'
+  }
 
 
 
   
   return (
 
-      <div className='homeSection'>
+      <div 
+        className='homeSection'
+        style={boxStyle}
+      >
 
         <div className='outerSection'>
           
@@ -81,7 +90,7 @@ export default function HomePage() {
           </div>
 
         </div>
-        
+
       </div>
   );
 }

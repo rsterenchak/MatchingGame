@@ -3,21 +3,29 @@ import './style.css';
 import musicIcon from './assets/musical-notes.svg'
 import planetIcon from './assets/planet.svg'
 import gitIcon from './assets/github.svg'
-import fightButton from './assets/FightButton.svg'
 
-export default function PlayPage() {
+export default function PlayPage({
+
+  background
+
+}) {
 
 
 
-
-
-
+  const boxStyle = {
+    backgroundImage: `url(${background})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover'
+  }
 
 
   
   return (
 
-    <div className='playSection'>
+    <div 
+      className='playSection'
+      style={boxStyle}
+    >
 
       <div className='outerSection2'>
             
