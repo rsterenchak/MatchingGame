@@ -6,36 +6,16 @@ import gitIcon from './assets/github.svg'
 
 export default function PlayPage({
   background,
-  setHomePage
+  setHomePage,
+  setAudio
 
 }) {
-
-/*   const audioElement = new Audio(homeSong);
-  let homeAudioSwitch = false; */
-
 
 
   const boxStyle = {
     backgroundImage: `url(${background})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover'
-  }
-
-  function PlayAudio(){
-
-    homeAudioSwitch = !homeAudioSwitch;
-
-    if(homeAudioSwitch){
-
-      audioElement.play();
-
-    }
-    else{
-
-      audioElement.pause();
-      audioElement.currentTime = 0;
-
-    }
   }
 
 
@@ -53,7 +33,10 @@ export default function PlayPage({
 
           <div className='topColumn3'>
 
-              <div className='musicBlock2'>
+              <div 
+                className='musicBlock2'
+                onClick={setAudio}
+              >
                 
                 <img className='musicIcon2' src={musicIcon} ></img>
 

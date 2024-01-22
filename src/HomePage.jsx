@@ -3,16 +3,14 @@ import './style.css';
 import musicIcon from './assets/musical-notes.svg'
 import gitIcon from './assets/github.svg'
 import gokuGif from './assets/goku-gif.gif'
-import homeSong from './assets/DragonBallZ.mp3'
 
 export default function HomePage({
   background,
-  setPlayPage
+  setPlayPage,
+  setAudio
 }) {
 
-  const audioElement = new Audio(homeSong);
-  audioElement.volume = 0.1;
-  let homeAudioSwitch = false;
+
 
 
   const boxStyle = {
@@ -23,22 +21,6 @@ export default function HomePage({
   }
 
 
-  function handleHomeAudio(){
-
-    homeAudioSwitch = !homeAudioSwitch;
-
-    if(homeAudioSwitch){
-
-      audioElement.play();
-
-    }
-    else{
-
-      audioElement.pause();
-      audioElement.currentTime = 0;
-
-    }
-  }
 
   
   return (
@@ -60,7 +42,7 @@ export default function HomePage({
 
                 <div 
                   className='musicBlock'
-                  onClick={() => handleHomeAudio()}
+                  onClick={setAudio}
                 >
                   
                   <img className='musicIcon' src={musicIcon} ></img>
