@@ -10,12 +10,32 @@ export default function PlayPage({
 
 }) {
 
+/*   const audioElement = new Audio(homeSong);
+  let homeAudioSwitch = false; */
+
 
 
   const boxStyle = {
     backgroundImage: `url(${background})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover'
+  }
+
+  function PlayAudio(){
+
+    homeAudioSwitch = !homeAudioSwitch;
+
+    if(homeAudioSwitch){
+
+      audioElement.play();
+
+    }
+    else{
+
+      audioElement.pause();
+      audioElement.currentTime = 0;
+
+    }
   }
 
 

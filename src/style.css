@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-/*   border: 1px solid red; */
+  border: 1px solid red;
 
 }
 
@@ -17,7 +17,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: system-ui, sans-serif;
-  
+  overflow: hidden;
 }
 
 .homeSection {
@@ -27,6 +27,7 @@ body {
   position: relative;
   
   z-index: 0;
+  overflow: visible;
 }
 
 
@@ -69,7 +70,7 @@ body {
 .topColumn1 {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: flex-start;
 
   width: 50%;
 
