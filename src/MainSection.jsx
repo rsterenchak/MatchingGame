@@ -132,6 +132,125 @@ function HandlePauseAudio({
 
 }
 
+function HandlePlayAudio({
+  audioState
+
+}){
+
+
+  const audioElement = new Audio(homeSong);
+  audioElement.volume = 0.1;
+  let homeAudioSwitch = false;
+
+  const audioElement2 = new Audio(playSong);
+  audioElement2.volume = 0.1;
+  let playAudioSwitch = false;
+
+  
+  /** Start re-thinking how this will work once music is played
+   *  Seems as though, upon render, this runs the effect, cleanup,
+   *  and then finally the effect once more. Contstruct based on that
+   * 
+   */
+
+  let cleanupMarker = true;
+
+    useEffect(() => {
+
+      cleanupMarker = true;
+   
+
+      var playPromise = audioElement2.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Automatic playback started!
+          
+          // Show playing UI.
+        })
+        .catch(error => {
+          // Auto-play was prevented
+          // Show paused UI.
+        });
+      }
+
+      console.log('useEffect - effect');
+
+      cleanupMarker = false;
+
+      return () => {
+
+
+        console.log('Cleanup for useEffect');
+
+        audioElement2.pause();
+
+
+
+        
+      };
+    }, [audioState])
+
+
+}
+
+function HandlePausePlayAudio({
+  audioState
+
+}){
+
+
+  const audioElement = new Audio(homeSong);
+  audioElement.volume = 0.1;
+  let homeAudioSwitch = false;
+
+  const audioElement2 = new Audio(playSong);
+  audioElement2.volume = 0.1;
+  let playAudioSwitch = false;
+
+  
+  /** Start re-thinking how this will work once music is played
+   *  Seems as though, upon render, this runs the effect, cleanup,
+   *  and then finally the effect once more. Contstruct based on that
+   * 
+   */
+
+  let cleanupMarker = true;
+
+    useEffect(() => {
+
+      cleanupMarker = true;
+   
+
+      var playPromise = audioElement2.pause();
+
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Automatic playback started!
+          // Show playing UI.
+        })
+        .catch(error => {
+          // Auto-play was prevented
+          // Show paused UI.
+        });
+      }
+
+      console.log('useEffect - effect');
+
+      cleanupMarker = false;
+
+      return () => {
+
+
+        console.log('Cleanup for useEffect');
+
+
+        
+      };
+    }, [audioState])
+
+
+}
 
 
 
@@ -148,20 +267,38 @@ export default function MainSection() {
 
     <>
 
-    {isCurrentAudio ? (
+    {isCurrentPage ? (
+
+       isCurrentAudio ? (
+      
+        <HandleHomeAudio
+          audioState={isCurrentAudio}
+        />
+      ) : (
+
+        <HandlePauseAudio
+          audioState={isCurrentAudio}
+        />
+
+      )
+       
     
-      <HandleHomeAudio
-        audioState={isCurrentAudio}
-      />
-    ) : (
+      ) : (
 
-      <HandlePauseAudio
-        audioState={isCurrentAudio}
-      />
+        isCurrentAudio ? (
+      
+          <HandlePlayAudio
+            audioState={isCurrentAudio}
+          />
+        ) : (
+  
+          <HandlePausePlayAudio
+            audioState={isCurrentAudio}
+          />
+  
+        )
 
-    )
-    }
-
+      )}
 
         
 
@@ -180,7 +317,9 @@ export default function MainSection() {
       <PlayPage
         background={playBackground}
         setHomePage={() => setCurrentPage(true)}
-        setAudio={() => setCurrentAudio(!isCurrentAudio)}
+        setAudioPause={() => setCurrentAudio(false)}
+        setAudioPlay={() => setCurrentAudio(!isCurrentAudio)}
+        activeCurrentAudio={isCurrentAudio}
       />  
     )}
 

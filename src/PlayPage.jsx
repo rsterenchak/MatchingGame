@@ -7,10 +7,13 @@ import gitIcon from './assets/github.svg'
 export default function PlayPage({
   background,
   setHomePage,
-  setAudio
+  setAudioPause,
+  setAudioPlay,
+  activeCurrentAudio
 
 }) {
 
+  
 
   const boxStyle = {
     backgroundImage: `url(${background})`,
@@ -18,8 +21,16 @@ export default function PlayPage({
     backgroundSize: 'cover'
   }
 
+  function setupPage(){
 
+    setHomePage();
+    setAudioPause();
+
+
+  }
   
+
+
   return (
 
     <div 
@@ -35,7 +46,7 @@ export default function PlayPage({
 
               <div 
                 className='musicBlock2'
-                onClick={setAudio}
+                onClick={setAudioPlay}
               >
                 
                 <img className='musicIcon2' src={musicIcon} ></img>
@@ -44,7 +55,7 @@ export default function PlayPage({
 
               <div 
                 className='musicBlock3'
-                onClick={setHomePage}  
+                onClick={() => setupPage()}  
               >
                 
                 <img className='musicIcon3' src={planetIcon} ></img>
