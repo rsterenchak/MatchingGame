@@ -30,6 +30,21 @@ export default function HomePage({
 
   }
 
+  function forMusicIcon(){
+
+    if(activeCurrentAudio === true){
+
+      setAudioPause();
+
+    }
+    else{
+
+      setAudioPlay();      
+
+    }
+
+  }
+
   
   return (
 
@@ -50,7 +65,7 @@ export default function HomePage({
 
                 <div 
                   className='musicBlock'
-                  onClick={setAudioPlay}
+                  onClick={() => forMusicIcon()}
                 >
                   
                   <img className='musicIcon' src={musicIcon} ></img>

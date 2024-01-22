@@ -298,7 +298,7 @@ export default function MainSection() {
         background={homeBackground}
         setPlayPage={() => setCurrentPage(false)}
         setAudioPause={() => setCurrentAudio(false)}
-        setAudioPlay={() => setCurrentAudio(!isCurrentAudio)}
+        setAudioPlay={() => setCurrentAudio(true)}
         activeCurrentAudio={isCurrentAudio}
       />
       
@@ -308,7 +308,7 @@ export default function MainSection() {
         background={playBackground}
         setHomePage={() => setCurrentPage(true)}
         setAudioPause={() => setCurrentAudio(false)}
-        setAudioPlay={() => setCurrentAudio(!isCurrentAudio)}
+        setAudioPlay={() => setCurrentAudio(true)}
         activeCurrentAudio={isCurrentAudio}
       />  
     )}

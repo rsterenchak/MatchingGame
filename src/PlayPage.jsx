@@ -29,6 +29,20 @@ export default function PlayPage({
 
   }
   
+  function forMusicIcon(){
+
+    if(activeCurrentAudio === true){
+
+      setAudioPause();
+
+    }
+    else{
+
+      setAudioPlay();      
+
+    }
+
+  }
 
 
   return (
@@ -46,7 +60,7 @@ export default function PlayPage({
 
               <div 
                 className='musicBlock2'
-                onClick={setAudioPlay}
+                onClick={() => forMusicIcon()}
               >
                 
                 <img className='musicIcon2' src={musicIcon} ></img>
