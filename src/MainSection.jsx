@@ -12,15 +12,14 @@ import playSong from './assets/NamekTheme.mp3'
 
 // create component responsible for controlling music
 
+function HandleAudio({
+  audioState
 
+}){
 
+  console.log('Runs handleAudio');
 
-
-
-export default function MainSection() {
-
-
-  const [isCurrentPage, setCurrentPage] = useState(true);
+  const [counter, setCounter] = useState(0);
 
   const audioElement = new Audio(homeSong);
   audioElement.volume = 0.1;
@@ -30,75 +29,61 @@ export default function MainSection() {
   audioElement2.volume = 0.1;
   let playAudioSwitch = false;
 
- 
-
-  function handleAudio(){
-
-    console.log('Runs handleAudio');
-
-    // when page is true set/play homeSong
-    if(isCurrentPage === true){
-
-      homeAudioSwitch = !homeAudioSwitch;
-
-      if(homeAudioSwitch){
   
-        audioElement2.pause();
-        audioElement2.currentTime = 0;        
-        audioElement.play();
-  
-      }
-      else{
-  
-        audioElement.pause();
-        audioElement.currentTime = 0;
-  
-      }
+  /** Start re-thinking how this will work once music is played
+   *  Seems as though, upon render, this runs the effect, cleanup,
+   *  and then finally the effect once more. Contstruct based on that
+   * 
+   */
+  useEffect(() => {
 
-
-    }
-
-    // when page is false set/play playSong
-    if(isCurrentPage === false){
-
-      playAudioSwitch = !playAudioSwitch;
-
-      if(playAudioSwitch){
-  
-        audioElement.pause();
-        audioElement.currentTime = 0;
-        audioElement2.play();
-  
-      }
-      else{
-  
-        audioElement2.pause();
-        audioElement2.currentTime = 0;
-  
-      }
-
-
-    }    
     
-  
-  }
+    // audioElement.play();
+
+    console.log('runs effect within useEffect');
+
+    return () => {
+
+      console.log('runs cleanup within useEffect');
+/*       audioElement.pause();
+      audioElement.currentTime = 0; */
+    };
+  }, [])
 
 
+}
+
+
+
+export default function MainSection() {
+
+
+  const [isCurrentPage, setCurrentPage] = useState(true);
+  const [isCurrentAudio, setCurrentAudio] = useState(false);
 
 
   return (
-
+    
 
     <>
 
+    {isCurrentAudio ? (
+    
+      <HandleAudio
+        audioState={isCurrentAudio}
+      />
+    ) : (
 
+      <></>
 
+    )
+    }
     {isCurrentPage ? (
     
       <HomePage 
         background={homeBackground}
         setPlayPage={() => setCurrentPage(false)}
-        setAudio={handleAudio}
+        setAudio={() => setCurrentAudio(!isCurrentAudio)}
       />
       
       ) : (
@@ -106,7 +91,7 @@ export default function MainSection() {
       <PlayPage
         background={playBackground}
         setHomePage={() => setCurrentPage(true)}
-        setAudio={handleAudio}
+        setAudio={HandleAudio}
       />  
     )}
 
@@ -116,3 +101,57 @@ export default function MainSection() {
     
   );
 }
+
+
+
+
+/*       // when page is true set/play homeSong
+      if(isCurrentPage === true){
+
+        console.log('isCurrentPage is true');
+
+        homeAudioSwitch = !homeAudioSwitch;
+
+        if(homeAudioSwitch){
+    
+          audioElement2.pause();
+          audioElement2.currentTime = 0;        
+          audioElement.play();
+    
+        }
+        else{
+    
+          audioElement.pause();
+          audioElement.currentTime = 0;
+    
+        }
+
+
+      }
+
+      // when page is false set/play playSong
+      if(isCurrentPage === false){
+
+        console.log('isCurrentPage is false');
+
+        playAudioSwitch = !playAudioSwitch;
+
+        if(playAudioSwitch){
+    
+          audioElement.pause();
+          audioElement.currentTime = 0;
+          audioElement2.play();
+    
+        }
+        else{
+    
+          audioElement2.pause();
+          audioElement2.currentTime = 0;
+    
+        }
+
+
+      }   
+ */
+
+
