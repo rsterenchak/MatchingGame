@@ -25,7 +25,7 @@ export default function PlayPage({
 
     setHomePage();
     setAudioPause();
-
+    setAudioPlay();
 
   }
   

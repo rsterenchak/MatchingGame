@@ -19,12 +19,9 @@ function HandleHomeAudio({
 
 
   const audioElement = new Audio(homeSong);
-  audioElement.volume = 0.1;
+  audioElement.volume = 0.07;
+  audioElement.loop = true;
   let homeAudioSwitch = false;
-
-  const audioElement2 = new Audio(playSong);
-  audioElement2.volume = 0.1;
-  let playAudioSwitch = false;
 
   
   /** Start re-thinking how this will work once music is played
@@ -81,12 +78,10 @@ function HandlePauseAudio({
 
 
   const audioElement = new Audio(homeSong);
-  audioElement.volume = 0.1;
+  audioElement.volume = 0.07;
+  audioElement.loop = true;
   let homeAudioSwitch = false;
 
-  const audioElement2 = new Audio(playSong);
-  audioElement2.volume = 0.1;
-  let playAudioSwitch = false;
 
   
   /** Start re-thinking how this will work once music is played
@@ -138,12 +133,10 @@ function HandlePlayAudio({
 }){
 
 
-  const audioElement = new Audio(homeSong);
-  audioElement.volume = 0.1;
-  let homeAudioSwitch = false;
-
   const audioElement2 = new Audio(playSong);
-  audioElement2.volume = 0.1;
+  audioElement2.volume = 0.07;
+  audioElement2.currentTime = 1;
+  audioElement2.loop = true;
   let playAudioSwitch = false;
 
   
@@ -174,14 +167,14 @@ function HandlePlayAudio({
         });
       }
 
-      console.log('useEffect - effect');
+      console.log('Play - useEffect');
 
       cleanupMarker = false;
 
       return () => {
 
 
-        console.log('Cleanup for useEffect');
+        console.log('Play - cleanup');
 
         audioElement2.pause();
 
@@ -200,12 +193,9 @@ function HandlePausePlayAudio({
 }){
 
 
-  const audioElement = new Audio(homeSong);
-  audioElement.volume = 0.1;
-  let homeAudioSwitch = false;
-
   const audioElement2 = new Audio(playSong);
-  audioElement2.volume = 0.1;
+  audioElement2.volume = 0.07;
+  audioElement2.loop = true;
   let playAudioSwitch = false;
 
   
@@ -235,14 +225,14 @@ function HandlePausePlayAudio({
         });
       }
 
-      console.log('useEffect - effect');
+      console.log('PlayPause - useEffect');
 
       cleanupMarker = false;
 
       return () => {
 
 
-        console.log('Cleanup for useEffect');
+        console.log('PlayPause - cleanup');
 
 
         
