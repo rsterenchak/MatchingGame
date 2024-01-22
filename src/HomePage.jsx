@@ -7,7 +7,9 @@ import gokuGif from './assets/goku-gif.gif'
 export default function HomePage({
   background,
   setPlayPage,
-  setAudio
+  setAudioPause,
+  setAudioPlay,
+  activeCurrentAudio
 }) {
 
 
@@ -20,7 +22,13 @@ export default function HomePage({
     backgroundSize: 'cover',
   }
 
+  function setupPage(){
 
+    setPlayPage();
+    setAudioPause();
+
+
+  }
 
   
   return (
@@ -42,7 +50,7 @@ export default function HomePage({
 
                 <div 
                   className='musicBlock'
-                  onClick={setAudio}
+                  onClick={setAudioPlay}
                 >
                   
                   <img className='musicIcon' src={musicIcon} ></img>
@@ -87,7 +95,7 @@ export default function HomePage({
           
           <div 
             className='inputSection'
-            onClick={setPlayPage}  
+            onClick={() => setupPage()}  
           >
 
             <div className='fightButton'>
