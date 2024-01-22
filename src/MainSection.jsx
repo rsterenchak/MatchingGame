@@ -9,7 +9,7 @@ import PlayPage from './PlayPage.jsx'
 export default function MainSection() {
 
 
-
+  const [isCurrentPage, setCurrentPage] = useState(true);
 
 
 
@@ -21,12 +21,25 @@ export default function MainSection() {
 
     <>
 
+
+
+    {isCurrentPage ? (
+    
       <HomePage 
         background={homeBackground}
+        setPlayPage={() => setCurrentPage(false)}
       />
-{/*       <PlayPage
+      
+      ) : (
+      
+      <PlayPage
         background={playBackground}
-      />  */}
+        setHomePage={() => setCurrentPage(true)}
+        
+      />  
+    )}
+
+
 
     </>
     

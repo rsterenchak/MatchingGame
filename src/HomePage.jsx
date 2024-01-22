@@ -2,11 +2,12 @@ import React from 'react';
 import './style.css';
 import musicIcon from './assets/musical-notes.svg'
 import gitIcon from './assets/github.svg'
+import gokuGif from './assets/goku-gif.gif'
 
 
 export default function HomePage({
-  background
-
+  background,
+  setPlayPage
 }) {
 
 
@@ -62,7 +63,6 @@ export default function HomePage({
 
             </div>
 
-
           </div>
           
           <div className='logoSection'>
@@ -78,7 +78,10 @@ export default function HomePage({
 
           </div>
           
-          <div className='inputSection'>
+          <div 
+            className='inputSection'
+            onClick={setPlayPage}  
+          >
 
             <div className='fightButton'>
 
@@ -87,6 +90,12 @@ export default function HomePage({
             </svg>
 
             </div>
+
+          </div>
+
+          <div className='animationSection'>
+            <img className='gokuGif' src={gokuGif}></img>
+
 
           </div>
 

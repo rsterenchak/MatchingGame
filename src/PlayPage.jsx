@@ -5,8 +5,8 @@ import planetIcon from './assets/planet.svg'
 import gitIcon from './assets/github.svg'
 
 export default function PlayPage({
-
-  background
+  background,
+  setHomePage
 
 }) {
 
@@ -39,7 +39,10 @@ export default function PlayPage({
 
               </div>
 
-              <div className='musicBlock3'>
+              <div 
+                className='musicBlock3'
+                onClick={setHomePage}  
+              >
                 
                 <img className='musicIcon3' src={planetIcon} ></img>
 
