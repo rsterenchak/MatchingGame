@@ -3,6 +3,7 @@ import './style.css';
 import musicIcon from './assets/musical-notes.svg'
 import planetIcon from './assets/planet.svg'
 import gitIcon from './assets/github.svg'
+import cardBack from './assets/dbzCardBack.png'
 
 export default function PlayPage({
   background,
@@ -102,17 +103,77 @@ export default function PlayPage({
         
         <div className='logoSection3'>
 
+          <div className='card1'>
+            
+            <img className='cardBack' src={cardBack}></img>
+
+          </div>
+          <div className='card2'>
+
+            <img className='cardBack' src={cardBack}></img>
+
+          </div>
+          <div className='card3'>
+
+            <img className='cardBack' src={cardBack}></img>
+
+          </div>
+          <div className='card4'>
+
+            <img className='cardBack' src={cardBack}></img>
+
+          </div>
+
 
         </div>
         
         <div className='logoSection4'>
 
+          <div className='card5'>
+
+            <img className='cardBack' src={cardBack}></img>
+
+          </div>
+          <div className='card6'>
+
+            <img className='cardBack' src={cardBack}></img>
+
+          </div>
+          <div className='card7'>
+
+            <img className='cardBack' src={cardBack}></img>
+
+          </div>
+          <div className='card8'>
+
+            <img className='cardBack' src={cardBack}></img>
+
+          </div>
 
         </div>
         
-        <div className='inputSection2'>
+        <div className='currentScoreSection'>
+
+          <div className='currentScoreElement'>
+
+            <div className='currentScoreText'>Current <br></br>Score:</div>
+            <div className='currentScoreValue'>&nbsp;0/12</div>
+
+          </div>
 
         </div>
+
+        <div className='highScoreSection'>
+
+          <div className='highScoreElement'>
+
+            <div className='highScoreText'>High Score: </div>
+            <div className='highScoreValue'>&nbsp;12</div>
+
+          </div>
+
+        </div>
+
 
       </div>
 

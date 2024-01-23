@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 1px solid red; 
+/*   border: 1px solid red;  */
 
 }
 
@@ -671,7 +671,7 @@ body {
 
 .outerSection2 {
   display: grid;
-  grid-template-rows: 1fr 2fr 2fr 1.5fr;
+  grid-template-rows: 1fr 2fr 2fr 0.8fr 0.8fr;
   height: 100%;
   margin: 0px;
   padding: 0px;
@@ -682,7 +682,6 @@ body {
 .navSection2 {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
 }
 
 
@@ -692,7 +691,7 @@ body {
   grid-template-areas: 
   'musicBlock2 . musicBlock3 .';
   width: 50%;
-  border: 1px solid blue;
+
 }
 
 
@@ -947,25 +946,95 @@ body {
 
 .logoSection3 {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   object-fit: contain;
+  gap: 40px;
 }
 
+.card1 {
+  display: flex;
+  border-radius: 15px;
+  height: 270px;
+  width: 190px;
+  cursor: pointer;
+}
 
+.card2 {
+  display: flex;
+  border-radius: 15px;
+  height: 270px;
+  width: 190px;
+  cursor: pointer;
+}
+
+.card3 {
+  display: flex;
+  border-radius: 15px;
+  height: 270px;
+  width: 190px;
+  cursor: pointer;
+}
+
+.card4 {
+  display: flex;
+  border-radius: 15px;
+  height: 270px;
+  width: 190px;
+  cursor: pointer;
+}
 
 .logoSection4 {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 
   object-fit: contain;
+  gap: 40px;
+}
+
+.card5 {
+  display: flex;
+  border-radius: 15px;
+  height: 270px;
+  width: 190px;
+  cursor: pointer;
+}
+
+.card6 {
+  display: flex;
+  border-radius: 15px;
+  height: 270px;
+  width: 190px;
+  cursor: pointer;
+}
+
+.card7 {
+  display: flex;
+  border-radius: 15px;
+  height: 270px;
+  width: 190px;
+  cursor: pointer;
+}
+
+.card8 {
+  display: flex;
+  border-radius: 15px;
+  height: 270px;
+  width: 190px;
+  cursor: pointer;
 }
 
 
-.inputSection2 {
+.cardBack {
+  border-radius: 7px;
+
+
+}
+
+.currentScoreSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -973,6 +1042,62 @@ body {
 
 }
 
+.currentScoreElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 280px;
+  font-family: 'customFont1';
+  font-size: 26px;  
+  background-color: #f84040;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.currentScoreText {
+  color: white;
+}
+
+.currentScoreValue {
+  color: white;
+}
+
+
+.highScoreSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+.highScoreElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;  
+  width: 300px;
+  margin-left: 10px;
+  font-family: 'customFont1';
+  font-size: 28px;
+  background-color: #f84040;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+.highScoreText {
+  color: white;
+
+  
+}
+
+.highScoreValue {
+  color: white;
+}
 
 
 /** Mobile HomePage Warping */
