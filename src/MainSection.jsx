@@ -51,7 +51,7 @@ function HandleHomeAudio({
         });
       }
 
-      console.log('useEffect - effect');
+      // console.log('useEffect - effect');
 
       cleanupMarker = false;
 
@@ -110,7 +110,7 @@ function HandlePauseAudio({
         });
       }
 
-      console.log('useEffect - effect');
+      // console.log('useEffect - effect');
 
       cleanupMarker = false;
 
@@ -167,7 +167,7 @@ function HandlePlayAudio({
         });
       }
 
-      console.log('Play - useEffect');
+      // console.log('Play - useEffect');
 
       cleanupMarker = false;
 
@@ -225,7 +225,7 @@ function HandlePausePlayAudio({
         });
       }
 
-      console.log('PlayPause - useEffect');
+      // console.log('PlayPause - useEffect');
 
       cleanupMarker = false;
 
@@ -250,7 +250,7 @@ export default function MainSection() {
   const [isCurrentPage, setCurrentPage] = useState(true);
   const [isCurrentAudio, setCurrentAudio] = useState(false);
 
-  console.log(isCurrentAudio);
+  // console.log(isCurrentAudio);
 
   return (
     
