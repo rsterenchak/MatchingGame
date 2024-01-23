@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-/*   border: 1px solid red;  */
+  border: 1px solid red; 
 
 }
 
@@ -57,6 +57,14 @@ body {
 }
 
 .gokuGif {
+  width: 800px;
+
+}
+
+.guyGif {
+
+  border: 1px solid blue;
+  right: 300px;
   width: 800px;
 
 }

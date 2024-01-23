@@ -16,6 +16,28 @@ export default function PlayPage({
 
   
 
+/**
+ * 'Card Generation Logic' - 1/23 - *** Currently working ***
+ * 
+ * - Load 16 cards into array as objects with pertaining information (name, image link, id(unique id))
+ * - Shuffle array
+ * - Show 8 cards
+ * - you will need three arrays, 
+ *    - regular array
+ *    - shown array
+ *    - picked array
+ * - the max amount of turns until game is beaten is 16 (the amount of cards in array)
+ * - 
+ * 
+ * 
+ */
+
+
+
+
+
+
+
   const boxStyle = {
     backgroundImage: `url(${background})`,
     backgroundPosition: 'center',
@@ -44,6 +66,9 @@ export default function PlayPage({
     }
 
   }
+
+
+
 
 
   return (
