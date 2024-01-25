@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Card from './Card.jsx'
 import musicIcon from './assets/musical-notes.svg'
 import planetIcon from './assets/planet.svg'
 import gitIcon from './assets/github.svg'
@@ -30,20 +31,32 @@ export default function PlayPage({
  *    - shown array
  *    - picked array
  * - every turn do these things (starting with first turn),
+ * 
  *    - >>>> Shuffle regular array <<<<
+ * 
  *    - store first 8 cards into - show array
  *    - make sure 'show array' contains at least 1 unpicked card (regular array - picked array) = unpicked array
  *    - if all cards are picked (repeat 'Shuffle regular array') 
+ * 
  *    - display those cards - show array
  *    - pick card
  *    - verify card isn't in the picked array
- *    - if it isn't in the picked array, add it to - picked array (+ score)
- *    - else if it is, stop game, user lost. (0 score increase)
+ *    - if it isn't in the picked array, add it to - picked array CONTINUE GAME (+ score)
+ *    - else if it is, stop game, user lost. END GAME (0 score increase)
+ * 
  *    - >>>> Shuffle regular array <<<<
  * 
  * 
  */
 
+
+
+  const dataArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+
+  const [isStandardArray, setStandardArray] = dataArray; // Regular Array
+
+  const [iUnpickedArray, setiUnpicked] = []; // cards that haven't been chosen yet
+  const [isPickedArray, setPickedArray] = []; //  cards that have already been picked
 
 
 
@@ -140,52 +153,19 @@ export default function PlayPage({
         
         <div className='logoSection3'>
 
-          <div className='card1'>
-            
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
-          <div className='card2'>
-
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
-          <div className='card3'>
-
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
-          <div className='card4'>
-
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
-
+          <Card />
+          <Card />
+          <Card />
+          <Card />
 
         </div>
         
         <div className='logoSection4'>
 
-          <div className='card5'>
-
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
-          <div className='card6'>
-
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
-          <div className='card7'>
-
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
-          <div className='card8'>
-
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
 
         </div>
         

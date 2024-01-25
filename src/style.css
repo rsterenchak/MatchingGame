@@ -962,7 +962,7 @@ body {
   gap: 40px;
 }
 
-.card1 {
+.card {
   display: flex;
   border-radius: 15px;
   height: 270px;
@@ -970,29 +970,6 @@ body {
   cursor: pointer;
 }
 
-.card2 {
-  display: flex;
-  border-radius: 15px;
-  height: 270px;
-  width: 190px;
-  cursor: pointer;
-}
-
-.card3 {
-  display: flex;
-  border-radius: 15px;
-  height: 270px;
-  width: 190px;
-  cursor: pointer;
-}
-
-.card4 {
-  display: flex;
-  border-radius: 15px;
-  height: 270px;
-  width: 190px;
-  cursor: pointer;
-}
 
 .logoSection4 {
   display: flex;
@@ -1004,37 +981,6 @@ body {
   gap: 40px;
 }
 
-.card5 {
-  display: flex;
-  border-radius: 15px;
-  height: 270px;
-  width: 190px;
-  cursor: pointer;
-}
-
-.card6 {
-  display: flex;
-  border-radius: 15px;
-  height: 270px;
-  width: 190px;
-  cursor: pointer;
-}
-
-.card7 {
-  display: flex;
-  border-radius: 15px;
-  height: 270px;
-  width: 190px;
-  cursor: pointer;
-}
-
-.card8 {
-  display: flex;
-  border-radius: 15px;
-  height: 270px;
-  width: 190px;
-  cursor: pointer;
-}
 
 
 .cardBack {
