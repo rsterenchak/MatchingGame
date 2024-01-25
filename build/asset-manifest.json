@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8467d04b.css",
+    "main.js": "/static/js/main.7d4f244e.js",
+    "static/media/NamekTheme.mp3": "/static/media/NamekTheme.aefb8d2342601307d0dc.mp3",
+    "static/media/kame-house.jpg": "/static/media/kame-house.10d629db1b699ba79c11.jpg",
+    "static/media/DragonBallZ.mp3": "/static/media/DragonBallZ.02c2c09b2e20a385b23c.mp3",
+    "static/media/MatchingGameTitle.svg": "/static/media/MatchingGameTitle.04237f20f30f0bb35f86.svg",
+    "static/media/namek-background.svg": "/static/media/namek-background.1724df1b7fcf8ef69978256010712fa7.svg",
+    "static/media/dbzCardBack.png": "/static/media/dbzCardBack.c2678b7c97583aded517.png",
+    "static/media/goku-gif.gif": "/static/media/goku-gif.1c4d2a634b6f54867459.gif",
+    "static/media/dragon-ball-image.png": "/static/media/dragon-ball-image.08095abf8f610671f395.png",
+    "static/media/dbzMoving.png": "/static/media/dbzMoving.04408d15c60bbc016f29.png",
+    "static/media/Shojumaru-Regular.ttf": "/static/media/Shojumaru-Regular.9559fd7a1206d37af501.ttf",
+    "static/media/planet.svg": "/static/media/planet.a06c3c2c46af20a37c5e27d779266a94.svg",
+    "static/media/github.svg": "/static/media/github.550985caaa8859d4b95ffb977ce9d9af.svg",
+    "static/media/musical-notes.svg": "/static/media/musical-notes.0b00f0043c47a114964cfea42fc68351.svg",
+    "index.html": "/index.html",
+    "main.8467d04b.css.map": "/static/css/main.8467d04b.css.map",
+    "main.7d4f244e.js.map": "/static/js/main.7d4f244e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8467d04b.css",
+    "static/js/main.7d4f244e.js"
+  ]
+}
