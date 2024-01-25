@@ -30,15 +30,16 @@ export default function PlayPage({
  *    - shown array
  *    - picked array
  * - every turn do these things (starting with first turn),
- *    - Shuffle regular array
+ *    - >>>> Shuffle regular array <<<<
  *    - store first 8 cards into - show array
- *    - make sure 'show array' contains at least 1 unpicked card (regular array - picked array)
- *    - if all cards are picked (repeat 'Shuffle regular array')
+ *    - make sure 'show array' contains at least 1 unpicked card (regular array - picked array) = unpicked array
+ *    - if all cards are picked (repeat 'Shuffle regular array') 
  *    - display those cards - show array
  *    - pick card
  *    - verify card isn't in the picked array
- *    - if it isn't in the picked array, add it to - picked array
- *    - 
+ *    - if it isn't in the picked array, add it to - picked array (+ score)
+ *    - else if it is, stop game, user lost. (0 score increase)
+ *    - >>>> Shuffle regular array <<<<
  * 
  * 
  */
