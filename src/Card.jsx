@@ -47,19 +47,33 @@ export default function Card({
  * 
  */
 
-  console.log(item.name);
+  // console.log(item.name);
 
   const myStyle = {
     border: '1px solid red'
     
   }
 
+
+
   function handleCardClick(){
+
+    // Note -> upon card shuffle all cards need to be added to the shown array/state
+
+    // When card is clicked, 
+
+    // > check if card has been shown
+
+    // > if it has been shown
+      //  > check if it has been picked
+      //  > if it hasn't been picked ->  
+
+    // > else if it hasn't been shown
+      // > end game 
+
 
     // Verify if game is over
     
-
-
     // if game is not over, shuffle cards and continue
 
   }

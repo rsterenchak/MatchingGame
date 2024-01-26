@@ -243,6 +243,8 @@ export default function PlayPage({
   const [activeTopRow, setActiveTopRow] = useState([]); // set top cards row
   const [activeBottomRow, setActiveBottomRow] = useState([]); // set bottom cards row
 
+  const [activeShown, setActiveShown] = useState([]); // set top cards row
+
   const [isUnpickedArray, setUnpickedArray] = useState([]); // cards that haven't been chosen yet
   const [activePickedArray, setActivePickedArray] = useState([]); //  cards that have already been picked
 
@@ -314,9 +316,8 @@ export default function PlayPage({
 
     }
 
-    // console.log(randomArrayPositions); // prints random positions
-
     let newlyShuffledArray = []
+    let newlyShownArray = activeShown;
 
     counter = 0;
 
@@ -325,10 +326,26 @@ export default function PlayPage({
 
       newlyShuffledArray.push(activeStandardArray[randomArrayPositions[counter]]);
 
+      // if card is not already in the newlyShownArray push it onto the array
+      if(newlyShownArray.includes(activeStandardArray[randomArrayPositions[counter]])){
+
+        console.log('Already exists on array');
+
+      }
+      else{
+
+        newlyShownArray.push(activeStandardArray[randomArrayPositions[counter]]);
+
+      }
+
       counter += 1;
 
 
     }
+
+    setActiveShown(newlyShownArray);
+
+    console.log(newlyShownArray);
 
     setActiveShuffledArray(newlyShuffledArray);
 
@@ -384,18 +401,20 @@ export default function PlayPage({
     
   );
 
+  
 
-// used for initial shuffle
+// used for initial shuffle - runs once during cleanup
   useEffect(() => {
 
     // console.log('Play effect');
 
-    shuffleArray();
+    // shuffleArray();
 
 
     return () => {
 
       // console.log('Play cleanup');
+      shuffleArray();
 
         
     };
