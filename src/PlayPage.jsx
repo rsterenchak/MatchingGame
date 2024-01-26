@@ -6,6 +6,38 @@ import planetIcon from './assets/planet.svg'
 import gitIcon from './assets/github.svg'
 import cardBack from './assets/dbzCardBack.png'
 
+
+function RunGamePlay({
+    
+  
+}){
+
+  
+  /** Start re-thinking how this will work once music is played
+   *  Seems as though, upon render, this runs the effect, cleanup,
+   *  and then finally the effect once more. Contstruct based on that
+   * 
+   */
+
+    useEffect(() => {
+
+      console.log('Play effect');
+
+      return () => {
+
+        console.log('Play cleanup');
+
+        
+      };
+    }, [])
+
+
+}
+
+
+
+
+
 export default function PlayPage({
   background,
   setHomePage,
@@ -54,12 +86,10 @@ export default function PlayPage({
   const dataArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 
   const [isStandardArray, setStandardArray] = dataArray; // Regular Array
+  const [isShuffledArray, setShuffledArray] = []; // Regular Array
 
-  const [iUnpickedArray, setiUnpicked] = []; // cards that haven't been chosen yet
+  const [isUnpickedArray, setUnpickedArray] = []; // cards that haven't been chosen yet
   const [isPickedArray, setPickedArray] = []; //  cards that have already been picked
-
-
-
 
 
 
@@ -94,9 +124,18 @@ export default function PlayPage({
 
 
 
+<RunGamePlay /> // Responsible for running gameplay - currently working on
+
+
+
 
 
   return (
+
+    <>
+
+
+
 
     <div 
       className='playSection'
@@ -195,5 +234,7 @@ export default function PlayPage({
       </div>
 
     </div>
+  
+  </>
   );
 }
