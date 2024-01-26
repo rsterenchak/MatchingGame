@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import './style.css';
 import musicIcon from './assets/musical-notes.svg'
 import planetIcon from './assets/planet.svg'
@@ -6,11 +7,13 @@ import gitIcon from './assets/github.svg'
 import cardBack from './assets/dbzCardBack.png'
 
 export default function Card({
-
+  item,
+  shuffleNow,
+  isPickedArray,
+  setPickedArray
 
 }) {
 
-  
 
 /**
  * 'Card Generation Logic' - 1/23 - *** Currently working ***
@@ -44,25 +47,42 @@ export default function Card({
  * 
  */
 
+  console.log(item.name);
+
+  const myStyle = {
+    border: '1px solid red'
+    
+  }
+
+  function handleCardClick(){
+
+    // Verify if game is over
+    
 
 
+    // if game is not over, shuffle cards and continue
 
-
-
-
+  }
 
 
 
   return (
 
+   <>
+
+            <div 
+              className='card'
+              onClick={shuffleNow}
+            >
+                        
+              <div className='cardFront'>{item.name}</div>
+
+            </div>
+
+  </> 
 
 
-          <div className='card'>
-            
-            <img className='cardBack' src={cardBack}></img>
-
-          </div>
-
-          
   );
+
+  
 }

@@ -58,7 +58,7 @@ function HandleHomeAudio({
       return () => {
 
 
-        console.log('Cleanup for useEffect');
+        // console.log('Cleanup for useEffect');
 
         audioElement.pause();
 
@@ -117,7 +117,7 @@ function HandlePauseAudio({
       return () => {
 
 
-        console.log('Cleanup for useEffect');
+        // console.log('Cleanup for useEffect');
 
 
         
@@ -174,7 +174,7 @@ function HandlePlayAudio({
       return () => {
 
 
-        console.log('Play - cleanup');
+        // console.log('Play - cleanup');
 
         audioElement2.pause();
 
@@ -232,7 +232,7 @@ function HandlePausePlayAudio({
       return () => {
 
 
-        console.log('PlayPause - cleanup');
+        // console.log('PlayPause - cleanup');
 
 
         

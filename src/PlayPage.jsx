@@ -1,6 +1,8 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import './style.css';
 import Card from './Card.jsx'
+import CardBack from './CardBack.jsx';
 import musicIcon from './assets/musical-notes.svg'
 import planetIcon from './assets/planet.svg'
 import gitIcon from './assets/github.svg'
@@ -8,7 +10,11 @@ import cardBack from './assets/dbzCardBack.png'
 
 
 function RunGamePlay({
-    
+  isStandardArray,
+  setShuffledArray,
+  isShuffledArray,
+  setTopRow,
+  setBottomRow    
   
 }){
 
@@ -19,9 +25,89 @@ function RunGamePlay({
    * 
    */
 
+  function randomIntFromInterval(min, max) { // min and max included
+
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  
+  }
+  
+  // Sets new cards to shuffledArray state in PlayPage
+  function shuffleArray(){
+
+    const randomArrayPositions = [];
+
+    console.log('runs shuffle array');
+
+    let counter = 0;
+
+    while(counter < ((isStandardArray.length)/2)){
+
+      let newPos = randomIntFromInterval(0, isStandardArray.length - 1);
+
+      if(randomArrayPositions.includes(newPos)){
+
+        console.log('Duplicate digit');
+
+      }
+      else{
+
+        randomArrayPositions.push(newPos);
+
+        counter += 1;
+      
+      }
+
+    }
+
+    console.log(randomArrayPositions); // prints random positions
+
+    let newlyShuffledArray = []
+
+    counter = 0;
+
+    while(counter < randomArrayPositions.length){
+      
+      newlyShuffledArray.push(isStandardArray[randomArrayPositions[counter]]);
+
+
+      counter += 1;
+    }
+
+    setShuffledArray(newlyShuffledArray);
+
+    let topRowArray =[];
+    let bottomRowArray =[];
+
+    let maxLength = randomArrayPositions.length;
+    let middleMaxLength = maxLength/2;
+
+    counter = 0;
+
+    while(counter < middleMaxLength){
+
+      topRowArray.push(newlyShuffledArray[counter]);
+
+      counter+= 1;
+    }
+
+    setTopRow(topRowArray);
+
+    while(counter < maxLength){
+
+      bottomRowArray.push(newlyShuffledArray[counter]);
+      counter+= 1;
+    }
+
+    setBottomRow(bottomRowArray);
+
+  }
+
     useEffect(() => {
 
       console.log('Play effect');
+
+      shuffleArray();
+
 
       return () => {
 
@@ -83,15 +169,84 @@ export default function PlayPage({
 
 
 
-  const dataArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+  const dataArray = [
+    {
+      id: Math.random(),
+      name: 'Goku',
+    },
+    {
+      id: Math.random(),
+      name: 'Vegeta',
+    },
+    {
+      id: Math.random(),
+      name: 'Piccolo',
+    },
+    {
+      id: Math.random(),
+      name: 'Gohan',
+    },
+    {
+      id: Math.random(),
+      name: 'Majin Bu',
+    },
+    {
+      id: Math.random(),
+      name: 'Cell',
+    },
+    {
+      id: Math.random(),
+      name: 'Gotenks',
+    },
+    {
+      id: Math.random(),
+      name: 'Krillin',
+    },
+    {
+      id: Math.random(),
+      name: 'King Kai',
+    },
+    {
+      id: Math.random(),
+      name: 'Namekian',
+    },
+    {
+      id: Math.random(),
+      name: 'Zarbon',
+    },
+    {
+      id: Math.random(),
+      name: 'Frieza',
+    },
+    {
+      id: Math.random(),
+      name: 'Android',
+    },
+    {
+      id: Math.random(),
+      name: 'Balma',
+    },
+    {
+      id: Math.random(),
+      name: 'Popo',
+    },
+    {
+      id: Math.random(),
+      name: 'Raditz',
+    }
+  ];
 
-  const [isStandardArray, setStandardArray] = dataArray; // Regular Array
-  const [isShuffledArray, setShuffledArray] = []; // Regular Array
 
-  const [isUnpickedArray, setUnpickedArray] = []; // cards that haven't been chosen yet
-  const [isPickedArray, setPickedArray] = []; //  cards that have already been picked
+  const [activeStandardArray, setActiveStandardArray] = useState(dataArray); // regular array
+  const [activeShuffledArray, setActiveShuffledArray] = useState([]); // Regular Array
 
+  const [activeTopRow, setActiveTopRow] = useState([]); // set top cards row
+  const [activeBottomRow, setActiveBottomRow] = useState([]); // set bottom cards row
 
+  const [isUnpickedArray, setUnpickedArray] = useState([]); // cards that haven't been chosen yet
+  const [activePickedArray, setActivePickedArray] = useState([]); //  cards that have already been picked
+
+  const [isSide, setSide] = useState(false); // regular array
 
   const boxStyle = {
     backgroundImage: `url(${background})`,
@@ -124,10 +279,146 @@ export default function PlayPage({
 
 
 
-<RunGamePlay /> // Responsible for running gameplay - currently working on
+  function randomIntFromInterval(min, max) { // min and max included
+
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  
+  }
+  
+  // Sets new cards to shuffledArray state in PlayPage
+  function shuffleArray(){
+
+    const randomArrayPositions = [];
+
+    console.log('runs shuffle array');
+
+    let counter = 0;
+
+    // Generates non-duplicate array positions
+    while(counter < ((activeStandardArray.length)/2)){
+
+      let newPos = randomIntFromInterval(0, activeStandardArray.length - 1);
+
+      if(randomArrayPositions.includes(newPos)){
+
+        console.log('Duplicate digit');
+
+      }
+      else{
+
+        randomArrayPositions.push(newPos);
+
+        counter += 1;
+      
+      }
+
+    }
+
+    // console.log(randomArrayPositions); // prints random positions
+
+    let newlyShuffledArray = []
+
+    counter = 0;
+
+    // Generates array with values
+    while(counter < randomArrayPositions.length){
+
+      newlyShuffledArray.push(activeStandardArray[randomArrayPositions[counter]]);
+
+      counter += 1;
 
 
+    }
 
+    setActiveShuffledArray(newlyShuffledArray);
+
+    let topRowArray =[];
+    let bottomRowArray =[];
+
+    let maxLength = randomArrayPositions.length;
+    let middleMaxLength = maxLength/2;
+
+    counter = 0;
+
+    while(counter < middleMaxLength){
+
+      topRowArray.push(newlyShuffledArray[counter]);
+
+      counter+= 1;
+    }
+
+    setActiveTopRow(topRowArray);
+
+    while(counter < maxLength){
+
+      bottomRowArray.push(newlyShuffledArray[counter]);
+      counter+= 1;
+    }
+
+    setActiveBottomRow(bottomRowArray);
+
+
+  }
+
+  let shuffledTopRow = activeTopRow.map(item => 
+
+    <Card 
+      item={item}
+      key={item.id}
+      shuffleNow={() => shuffleArray()}
+      isPickedArray={activePickedArray}
+      setPickedArray={setActivePickedArray}
+    />
+    
+  );
+
+  let shuffledBottomRow = activeBottomRow.map(item => 
+
+    <Card 
+      item={item}
+      key={item.id}
+      shuffleNow={() => shuffleArray()}
+      isPickedArray={activePickedArray}
+      setPickedArray={setActivePickedArray}      
+    />
+    
+  );
+
+
+// used for initial shuffle
+  useEffect(() => {
+
+    // console.log('Play effect');
+
+    shuffleArray();
+
+
+    return () => {
+
+      // console.log('Play cleanup');
+
+        
+    };
+  }, [])
+
+// used for card flip when shuffled array changes  
+  useEffect(() => {
+    // console.log('Play effect - card');
+
+    const key = setInterval(() => {
+
+      setSide(true);
+
+    }, 1000);
+
+
+    return () => {
+      // console.log('Play cleanup - card');
+      setSide(false);
+      clearInterval(key);
+
+    };
+  }, [activeShuffledArray]) 
 
 
   return (
@@ -135,106 +426,124 @@ export default function PlayPage({
     <>
 
 
+      <div 
+        className='playSection'
+        style={boxStyle}
+      >
 
+        <div className='outerSection2'>
+              
+          <div className='navSection2'>
 
-    <div 
-      className='playSection'
-      style={boxStyle}
-    >
+            <div className='topColumn3'>
 
-      <div className='outerSection2'>
-            
-        <div className='navSection2'>
+                <div 
+                  className='musicBlock2'
+                  onClick={() => forMusicIcon()}
+                >
+                  
+                  <img className='musicIcon2' src={musicIcon} ></img>
 
-          <div className='topColumn3'>
+                </div>
 
-              <div 
-                className='musicBlock2'
-                onClick={() => forMusicIcon()}
-              >
-                
-                <img className='musicIcon2' src={musicIcon} ></img>
-
-              </div>
-
-              <div 
-                className='musicBlock3'
-                onClick={() => setupPage()}  
-              >
-                
-                <img className='musicIcon3' src={planetIcon} ></img>
-
-              </div>
-
-
-          </div>
-          <div className='topColumn4'>
-
-
-              <div className='portfolioBlock2'>
-
-                <div className='portfolioText2'>@rsterenchak</div>
-
-                <div className='portfolioIcon2'>
-
-                  <img className='gitIcon' src={gitIcon}></img>
+                <div 
+                  className='musicBlock3'
+                  onClick={() => setupPage()}  
+                >
+                  
+                  <img className='musicIcon3' src={planetIcon} ></img>
 
                 </div>
 
 
-              </div>
+            </div>
+            <div className='topColumn4'>
 
+
+                <div className='portfolioBlock2'>
+
+                  <div className='portfolioText2'>@rsterenchak</div>
+
+                  <div className='portfolioIcon2'>
+
+                    <img className='gitIcon' src={gitIcon}></img>
+
+                  </div>
+
+
+                </div>
+
+
+            </div>
+
+
+          </div>
+          
+          <div className='logoSection3'>
+
+            {isSide ?(
+            <>
+              {shuffledTopRow}
+            </>
+            ) : (
+              <>
+                <CardBack />
+                <CardBack />
+                <CardBack />
+                <CardBack />
+              </>
+            )
+
+            }
+
+          </div>
+          
+          <div className='logoSection4'>
+
+            {isSide ?(
+              <>
+                {shuffledBottomRow}
+              </>
+              ) : (
+                <>
+                  <CardBack />
+                  <CardBack />
+                  <CardBack />
+                  <CardBack />
+                </>
+              )
+
+            }
+
+          </div>
+          
+          <div className='currentScoreSection'>
+
+            <div className='currentScoreElement'>
+
+              <div className='currentScoreText'>Current <br></br>Score:</div>
+              <div className='currentScoreValue'>&nbsp;0/12</div>
+
+            </div>
+
+          </div>
+
+          <div className='highScoreSection'>
+
+            <div className='highScoreElement'>
+
+              <div className='highScoreText'>High Score: </div>
+              <div className='highScoreValue'>&nbsp;12</div>
+
+            </div>
 
           </div>
 
 
         </div>
-        
-        <div className='logoSection3'>
-
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-
-        </div>
-        
-        <div className='logoSection4'>
-
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-
-        </div>
-        
-        <div className='currentScoreSection'>
-
-          <div className='currentScoreElement'>
-
-            <div className='currentScoreText'>Current <br></br>Score:</div>
-            <div className='currentScoreValue'>&nbsp;0/12</div>
-
-          </div>
-
-        </div>
-
-        <div className='highScoreSection'>
-
-          <div className='highScoreElement'>
-
-            <div className='highScoreText'>High Score: </div>
-            <div className='highScoreValue'>&nbsp;12</div>
-
-          </div>
-
-        </div>
-
 
       </div>
-
-    </div>
-  
+    
   </>
   );
 }
