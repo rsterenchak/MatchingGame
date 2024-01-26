@@ -248,6 +248,8 @@ export default function PlayPage({
   // const [isUnpickedArray, setUnpickedArray] = useState([]); // cards that haven't been chosen yet
   const [activePickedArray, setActivePickedArray] = useState([]); //  cards that have already been picked
 
+  const [activeScore, setActiveScore] = useState(0);
+
   const [isSide, setSide] = useState(false); // regular array
 
   const boxStyle = {
@@ -386,6 +388,8 @@ export default function PlayPage({
       isPickedArray={activePickedArray}
       setPickedArray={setActivePickedArray}
       isShown={activeShown}
+      isScore={activeScore}
+      setScore={setActiveScore}
     />
     
   );
@@ -398,7 +402,9 @@ export default function PlayPage({
       shuffleNow={() => shuffleArray()}
       isPickedArray={activePickedArray}
       setPickedArray={setActivePickedArray}
-      isShown={activeShown}      
+      isShown={activeShown}
+      isScore={activeScore}
+      setScore={setActiveScore}            
     />
     
   );

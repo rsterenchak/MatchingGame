@@ -11,7 +11,9 @@ export default function Card({
   shuffleNow,
   isPickedArray,
   setPickedArray,
-  isShown
+  isShown,
+  isScore,
+  setScore
 
 }) {
 
@@ -70,14 +72,24 @@ export default function Card({
 
 
       //  > check if it has been picked
-      
+      if(isPickedArray.includes(item)){
       
         // > end game  
-      
+        console.log('Game is over...');
+
+      }
       
       //  > else if it hasn't been picked
-          // > add to picked array (state), increment score (state) 
+      else{
+       
+        // > add to picked array (state), increment score (state) 
+        let newlyPickedArray = isPickedArray;
 
+        setPickedArray(newlyPickedArray);
+
+        // ****** START BACK UP RIGHT HERE w/ incremeneting the score (setScore) ********
+      
+      }
     }
 
     // > else if it hasn't been shown
