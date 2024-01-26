@@ -245,7 +245,7 @@ export default function PlayPage({
 
   const [activeShown, setActiveShown] = useState([]); // set top cards row
 
-  const [isUnpickedArray, setUnpickedArray] = useState([]); // cards that haven't been chosen yet
+  // const [isUnpickedArray, setUnpickedArray] = useState([]); // cards that haven't been chosen yet
   const [activePickedArray, setActivePickedArray] = useState([]); //  cards that have already been picked
 
   const [isSide, setSide] = useState(false); // regular array
@@ -385,6 +385,7 @@ export default function PlayPage({
       shuffleNow={() => shuffleArray()}
       isPickedArray={activePickedArray}
       setPickedArray={setActivePickedArray}
+      isShown={activeShown}
     />
     
   );
@@ -396,7 +397,8 @@ export default function PlayPage({
       key={item.id}
       shuffleNow={() => shuffleArray()}
       isPickedArray={activePickedArray}
-      setPickedArray={setActivePickedArray}      
+      setPickedArray={setActivePickedArray}
+      isShown={activeShown}      
     />
     
   );

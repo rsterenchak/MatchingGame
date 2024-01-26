@@ -10,7 +10,8 @@ export default function Card({
   item,
   shuffleNow,
   isPickedArray,
-  setPickedArray
+  setPickedArray,
+  isShown
 
 }) {
 
@@ -63,18 +64,35 @@ export default function Card({
     // When card is clicked, 
 
     // > check if card has been shown
+    if(isShown.includes(item)){
 
-    // > if it has been shown
+      console.log('Item has been shown');
+
+
       //  > check if it has been picked
-      //  > if it hasn't been picked ->  
+      
+      
+        // > end game  
+      
+      
+      //  > else if it hasn't been picked
+          // > add to picked array (state), increment score (state) 
+
+    }
 
     // > else if it hasn't been shown
+    else{
+    
       // > end game 
-
+    
+    }
 
     // Verify if game is over
     
     // if game is not over, shuffle cards and continue
+
+
+    shuffleNow();
 
   }
 
@@ -86,7 +104,7 @@ export default function Card({
 
             <div 
               className='card'
-              onClick={shuffleNow}
+              onClick={() => handleCardClick()}
             >
                         
               <div className='cardFront'>{item.name}</div>
