@@ -304,7 +304,7 @@ body {
 
 .fightButton:hover, .svg-text:hover {
 
-
+  
   animation: 0.5s change-color 1 normal forwards; 
   
 }
@@ -319,6 +319,7 @@ body {
     width: 205px;
     font-size: 21px;
     background-color: yellow;
+    fill: rgb(0, 0, 0)
 
   }
 }
@@ -1119,15 +1120,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 400px;
-  width: 500px;
+  height: 200px;
+  width: 350px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
   gap: 20px;
   font-family: 'customFont1';
 }
 
 .gameOverTitle {  
-  font-size: 45px;
+  font-size: 35px;
 }
 
 .retryButton {
@@ -1136,7 +1137,7 @@ body {
   position: relative;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 20px;
   width: 160px;
   height: 55px;
   margin: 2px;
