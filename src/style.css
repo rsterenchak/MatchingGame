@@ -1223,8 +1223,15 @@ body {
 
 /** Mobile HomePage Warping */
 
-@media screen and (max-width: 1000px) {
+/* smartphones, iPhone, portrait 480x320 phones */ 
+@media (min-width:320px)  {
 
+  
+  
+  }
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+@media (min-width:481px)  {
 
   .logoSection3 {
     display: flex;
@@ -1236,7 +1243,76 @@ body {
     align-items: center;
     object-fit: contain;
     gap: 20px;
-    width: 450px;
+    width: 470px;
+    
+
+  }
+  
+  .card {
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 155px;
+    width: 95px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  
+  }
+
+  .cardBack {
+    height: 155px;
+    width: 95px;
+    border-radius: 7px;
+    border: 1px solid blue;
+  
+  }
+
+  .logoSection4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    gap: 20px;
+    width: 470px;
+    
+
+  }
+  .highScoreElement {
+    height: 50px;  
+    width: 210px;
+    font-size: 20px;
+  }
+
+  .currentScoreElement {
+    height: 80px;
+    width: 200px;
+    font-size: 20px;
+  }
+  
+
+}
+@media (min-width:641px)  {
+   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+   .logoSection3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    gap: 20px;
+    width: 650px;
     
 
   }
@@ -1274,80 +1350,32 @@ body {
     align-items: center;
     object-fit: contain;
     gap: 20px;
-    width: 450px;
-    
-
-  }
-
-
-}
-
-
-@media screen and (max-width: 1600px) and (max-height: 1000px) {
-
-
-  .logoSection3 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: row-reverse;
-    align-self: center;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
-    gap: 20px;
-    width: 650px;
-    
-
-  }
-  
-  .card {
-    display: flex;
-    
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 15px;
-    height: 190px;
-    width: 125px;
-    cursor: pointer;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  
-  }
-
-  .cardBack {
-    height: 190px;
-    width: 125px;
-    border-radius: 7px;
-    border: 1px solid blue;
-  
-  }
-
-  .logoSection4 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: row;
-    align-self: center;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
-    gap: 20px;
     width: 650px;
     
 
   }
 
+  .highScoreElement {
+    height: 60px;  
+    width: 300px;
+    font-size: 26px;  
+  }
 
-}
+  .currentScoreElement {
+    height: 100px;
+    width: 280px;
+    font-size: 26px;  
 
+  }
+  
+  
+  }
 
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:961px)  {
 
-/* @media screen and (max-width: 1000px) {
-
-  .logoSection3 {
+  
+   .logoSection3 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap-reverse;
@@ -1357,7 +1385,7 @@ body {
     align-items: center;
     object-fit: contain;
     gap: 20px;
-    width: 450px;
+    width: 650px;
     
 
   }
@@ -1395,13 +1423,131 @@ body {
     align-items: center;
     object-fit: contain;
     gap: 20px;
-    width: 450px;
+    width: 650px;
     
 
   }
 
 
-} */
+  
+  }
+
+/* big landscape tablets, laptops, and desktops */ 
+@media (min-width:1025px) { 
+
+  .logoSection3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    gap: 20px;
+    width: 650px;
+    
+
+  }
+  
+  .card {
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 210px;
+    width: 145px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  
+  }
+
+  .cardBack {
+    height: 210px;
+    width: 145px;
+    border-radius: 7px;
+    border: 1px solid blue;
+  
+  }
+
+  .logoSection4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    gap: 20px;
+    width: 650px;
+    
+
+  }
+
+
+}
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) { 
+   
+  .logoSection3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    gap: 20px;
+    width: 850px;
+    
+
+  }
+  
+  .card {
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 270px;
+    width: 195px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  
+  }
+
+  .cardBack {
+    height: 270px;
+    width: 195px;
+    border-radius: 7px;
+    border: 1px solid blue;
+  
+  }
+
+  .logoSection4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    gap: 20px;
+    width: 850px;
+    
+
+  }
+}
+
 
 
 /* 

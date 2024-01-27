@@ -73,14 +73,14 @@ export default function Card({
     // > check if card has been shown
     if(isShown.includes(item)){
 
-      console.log('Item has been shown');
+      // console.log('Item has been shown');
 
 
       //  > check if it has been picked
       if(isPickedArray.includes(item)){
       
         // > end game  
-        console.log('Game is over...exists in the picked array');
+        // console.log('Game is over...exists in the picked array');
 
         // need to generate an 'end game retry screen'
         // include pop-up, You scored #/#. Would you like to play again?
@@ -109,7 +109,7 @@ export default function Card({
 
 
         setScore(incrementedScore);
-        console.log(incrementedScore);
+        // console.log(incrementedScore);
         
       
       }
@@ -119,7 +119,7 @@ export default function Card({
     else{
     
       // > end game  
-      console.log('Game is over...card was never shown');
+      // console.log('Game is over...card was never shown');
 
       // need to generate an 'end game retry screen'
       setPopUp(true);
