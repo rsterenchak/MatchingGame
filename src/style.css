@@ -1240,11 +1240,12 @@ body {
 
 /** Mobile HomePage Warping */
 
+
 /* smartphones, iPhone, portrait 480x320 phones */ 
 @media (min-width:320px)  {
   .outerSection2 {
     display: grid;
-    grid-template-rows: 1fr 1.2fr 1.2fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
     height: 100%;
     margin: 0px;
     padding: 0px;
@@ -1281,7 +1282,7 @@ body {
     align-items: center;
     object-fit: contain;
     gap: 20px;
-    width: 410px;
+    width: 270px;
 
 
   }
@@ -1293,8 +1294,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    height: 125px;
-    width: 75px;
+    height: 105px;
+    width: 55px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   
@@ -1318,7 +1319,7 @@ body {
     align-items: center;
     object-fit: contain;
     gap: 20px;
-    width: 410px;
+    width: 270px;
     
 
   }
@@ -1336,7 +1337,7 @@ body {
   
 
 }
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+
 @media (min-width:481px)  {
   .outerSection2 {
     display: grid;
@@ -1427,6 +1428,7 @@ body {
   
 
 }
+
 @media (min-width:641px)  {
    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
    .outerSection2 {
