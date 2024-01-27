@@ -22,6 +22,7 @@ export default function Card({
 
 }) {
 
+  console.log(item);
 
 /**
  * 'Card Generation Logic' - 1/23 - *** Currently working ***
@@ -154,7 +155,9 @@ export default function Card({
               style={style}
             >
                         
-              <div className='cardFront'>{item.name}</div>
+              <div className='cardFront'>
+                <img className='cardImage' src={item.image}></img>
+              </div>
 
             </div>
 

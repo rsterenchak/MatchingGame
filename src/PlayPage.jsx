@@ -129,7 +129,8 @@ export default function PlayPage({
   setHomePage,
   setAudioPause,
   setAudioPlay,
-  activeCurrentAudio
+  activeCurrentAudio,
+  isActiveData
 
 }) {
 
@@ -166,6 +167,56 @@ export default function PlayPage({
  * 
  * 
  */
+
+/* let lastResponse = '';
+ */
+/* async function pullCharacters(value) {
+  let url = 'https://dragonball-api.com/api/characters?page=1&limit=' + value;
+
+
+  // issue getting new fetch calls
+
+  try {
+    let response = await fetch(url, {mode: 'cors'});
+  
+
+    if(!response.ok){
+    
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    
+    }
+
+
+    let forecast = await response.json();
+    
+    lastResponse = forecast;
+
+    console.log(lastResponse);
+
+    // validInput();
+    // changeWeatherInfo(alldays).validInput();
+
+    return lastResponse;
+
+      } 
+  catch(err) {
+    // catches errors both in fetch and response.json
+    
+    // need function call to indexChanges that signals invalid input to user
+    // invalidInput();
+    // changeWeatherInfo(alldays).invalidInput();
+
+    // alert(err);
+    console.log(err);
+
+    return lastResponse;
+
+  }
+
+}
+ */
+// let newArray = pullCharacters(16);
+// setActiveStandardArray(newArray.items);
 
 
 
@@ -236,9 +287,8 @@ export default function PlayPage({
     }
   ];
 
-  const mediaQuery = window.matchMedia("(max-width: 1290px)");
 
-  const [activeStandardArray, setActiveStandardArray] = useState(dataArray); // regular array
+  const [activeStandardArray, setActiveStandardArray] = useState(isActiveData); // regular array
   const [activeShuffledArray, setActiveShuffledArray] = useState([]); // Regular Array
 
   const [activeTopRow, setActiveTopRow] = useState([]); // set top cards row
@@ -419,6 +469,7 @@ export default function PlayPage({
     <Card 
       item={item}
       key={item.id}
+      image={item.image}
       shuffleNow={() => shuffleArray()}
       isPickedArray={activePickedArray}
       setPickedArray={setActivePickedArray}
@@ -444,22 +495,20 @@ export default function PlayPage({
 
   }
 
+
+
 // used for initial shuffle - runs once during cleanup
   useEffect(() => {
 
-    // console.log('Play effect');
+    return () => {   
 
-    // shuffleArray();
-
-
-    return () => {
-
-      // console.log('Play cleanup');
+      console.log('Play cleanup - PlayPage');
       shuffleArray();
 
         
     };
   }, [])
+
 
 // used for card flip when shuffled array changes  
   useEffect(() => {
@@ -467,15 +516,19 @@ export default function PlayPage({
 
     const key = setInterval(() => {
 
+      console.log('setSide true');
       setSide(true);
 
     }, 1000);
 
 
     return () => {
-      // console.log('Play cleanup - card');
+      
+      console.log('setSide false');
       setSide(false);
       clearInterval(key);
+      // console.log(activeStandardArray);
+      // shuffleArray();
 
     };
   }, [activeShuffledArray]) 

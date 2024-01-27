@@ -250,7 +250,28 @@ export default function MainSection() {
   const [isCurrentPage, setCurrentPage] = useState(true);
   const [isCurrentAudio, setCurrentAudio] = useState(false);
 
-  // console.log(isCurrentAudio);
+  const [activeData, setActiveData] = useState([]);
+
+  useEffect(() => {
+
+    return () => {
+      const fetchData = async () => {
+        const response = await fetch(`https://dragonball-api.com/api/characters?page=1&limit=16`);
+        const newData = await response.json();
+        setActiveData(newData.items);
+  
+      };
+    
+      fetchData();      
+
+      console.log('Play cleanup - MainSection');
+      
+
+        
+    };
+  }, [])
+
+
 
   return (
     
@@ -310,6 +331,7 @@ export default function MainSection() {
         setAudioPause={() => setCurrentAudio(false)}
         setAudioPlay={() => setCurrentAudio(true)}
         activeCurrentAudio={isCurrentAudio}
+        isActiveData={activeData}
       />  
     )}
 

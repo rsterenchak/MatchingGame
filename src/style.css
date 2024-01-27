@@ -965,6 +965,7 @@ body {
 
 .card {
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -972,7 +973,8 @@ body {
   height: 270px;
   width: 190px;
   cursor: pointer;
-  background-color: white;
+  overflow: hidden;
+  background-color: rgb(255, 90, 90);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 
 }
@@ -991,9 +993,21 @@ body {
 
 
 .cardFront {
-  border-radius: 7px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  width: auto; /* Maintain aspect ratio */
+  display: block;
+  
 
+}
 
+.cardImage {
+  position: relative;
+  width: 150px;
+  height: auto
 }
 
 .cardBack {
@@ -1003,6 +1017,8 @@ body {
   border: 1px solid blue;
 
 }
+
+
 
 .currentScoreSection {
   display: flex;
@@ -1225,6 +1241,14 @@ body {
 
 /* smartphones, iPhone, portrait 480x320 phones */ 
 @media (min-width:320px)  {
+  .outerSection2 {
+    display: grid;
+    grid-template-rows: 1fr 1.2fr 1.2fr 1fr;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    gap: 10px;
+  }
   .musicBlock3 {
 
     width: 50px;
@@ -1271,7 +1295,6 @@ body {
     height: 125px;
     width: 75px;
     cursor: pointer;
-    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   
   }
@@ -1314,7 +1337,14 @@ body {
 }
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
 @media (min-width:481px)  {
-
+  .outerSection2 {
+    display: grid;
+    grid-template-rows: 1fr 1.4fr 1.4fr 1fr;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    gap: 10px;
+  }
   .musicBlock3 {
 
     width: 50px;
@@ -1356,7 +1386,6 @@ body {
     height: 125px;
     width: 75px;
     cursor: pointer;
-    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   
   }
@@ -1399,7 +1428,14 @@ body {
 }
 @media (min-width:641px)  {
    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-
+   .outerSection2 {
+    display: grid;
+    grid-template-rows: 1fr 1.4fr 1.4fr 1fr;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    gap: 10px;
+  }
    .musicBlock3 {
 
     width: 60px;
@@ -1441,7 +1477,6 @@ body {
     height: 190px;
     width: 125px;
     cursor: pointer;
-    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   
   }
@@ -1536,7 +1571,6 @@ body {
     height: 190px;
     width: 125px;
     cursor: pointer;
-    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   
   }
@@ -1576,7 +1610,7 @@ body {
       margin: 0px;
       padding: 0px;
       gap: 10px;
-  }
+    }
     
     .musicBlock3 {
       display: flex;
@@ -1624,7 +1658,6 @@ body {
       height: 275;
       width: 180px;
       cursor: pointer;
-      background-color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
   
@@ -1696,17 +1729,39 @@ body {
 
   .card {
     display: flex;
-    
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
     height: 210px;
     width: 145px;
+    border: 1px solid black;
+    overflow: hidden; /* Prevent content from overflowing */
+    position: relative; 
     cursor: pointer;
-    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    
   
+  }
+
+
+  .cardFront {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+    
+  
+  }
+
+  .cardImage {
+    position: relative;
+    width: 150px;
+    height: auto
+
   }
 
   .cardBack {
@@ -1778,7 +1833,6 @@ body {
     height: 270px;
     width: 195px;
     cursor: pointer;
-    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   
   }
