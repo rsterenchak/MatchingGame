@@ -46,7 +46,7 @@ function RunGamePlay({
 
       if(randomArrayPositions.includes(newPos)){
 
-        console.log('Duplicate digit');
+        // console.log('Duplicate digit');
 
       }
       else{
@@ -248,14 +248,25 @@ export default function PlayPage({
   // const [isUnpickedArray, setUnpickedArray] = useState([]); // cards that haven't been chosen yet
   const [activePickedArray, setActivePickedArray] = useState([]); //  cards that have already been picked
 
+  const [activePopUp, setActivePopUp] = useState(false);
+
   const [activeScore, setActiveScore] = useState(0);
 
   const [isSide, setSide] = useState(false); // regular array
 
+  const [isHovered, setIsHovered] = useState(false); // going to use to for disabling 'hover' on all button elements when game over popup appears
+
   const boxStyle = {
     backgroundImage: `url(${background})`,
     backgroundPosition: 'center',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    filter: activePopUp ? 'blur(5px)' : 'blur(0px)'
+  }
+
+  const popUpStyle ={
+
+    cursor: activePopUp ? 'auto' : 'pointer'
+
   }
 
   function setupPage(){
@@ -294,7 +305,7 @@ export default function PlayPage({
 
     const randomArrayPositions = [];
 
-    console.log('runs shuffle array');
+    // console.log('runs shuffle array');
 
     let counter = 0;
 
@@ -305,7 +316,7 @@ export default function PlayPage({
 
       if(randomArrayPositions.includes(newPos)){
 
-        console.log('Duplicate digit');
+        // console.log('Duplicate digit');
 
       }
       else{
@@ -331,7 +342,7 @@ export default function PlayPage({
       // if card is not already in the newlyShownArray push it onto the array
       if(newlyShownArray.includes(activeStandardArray[randomArrayPositions[counter]])){
 
-        console.log('Already exists on array');
+        // console.log('Already exists on array');
 
       }
       else{
@@ -347,7 +358,7 @@ export default function PlayPage({
 
     setActiveShown(newlyShownArray);
 
-    console.log(newlyShownArray);
+    // console.log(newlyShownArray);
 
     setActiveShuffledArray(newlyShuffledArray);
 
@@ -390,6 +401,9 @@ export default function PlayPage({
       isShown={activeShown}
       isScore={activeScore}
       setScore={setActiveScore}
+      isPopUp={activePopUp}
+      setPopUp={setActivePopUp}
+      style={popUpStyle}
     />
     
   );
@@ -404,7 +418,10 @@ export default function PlayPage({
       setPickedArray={setActivePickedArray}
       isShown={activeShown}
       isScore={activeScore}
-      setScore={setActiveScore}            
+      setScore={setActiveScore}
+      isPopUp={activePopUp}
+      setPopUp={setActivePopUp}  
+      style={popUpStyle}          
     />
     
   );
@@ -467,6 +484,7 @@ export default function PlayPage({
                 <div 
                   className='musicBlock2'
                   onClick={() => forMusicIcon()}
+                  style={popUpStyle}
                 >
                   
                   <img className='musicIcon2' src={musicIcon} ></img>
@@ -475,7 +493,8 @@ export default function PlayPage({
 
                 <div 
                   className='musicBlock3'
-                  onClick={() => setupPage()}  
+                  onClick={() => setupPage()}
+                  style={popUpStyle}
                 >
                   
                   <img className='musicIcon3' src={planetIcon} ></img>
@@ -549,7 +568,7 @@ export default function PlayPage({
             <div className='currentScoreElement'>
 
               <div className='currentScoreText'>Current <br></br>Score:</div>
-              <div className='currentScoreValue'>&nbsp;0/12</div>
+              <div className='currentScoreValue'>&nbsp;{activeScore}/16</div>
 
             </div>
 
@@ -560,7 +579,7 @@ export default function PlayPage({
             <div className='highScoreElement'>
 
               <div className='highScoreText'>High Score: </div>
-              <div className='highScoreValue'>&nbsp;12</div>
+              <div className='highScoreValue'>&nbsp;16</div>
 
             </div>
 
@@ -571,6 +590,27 @@ export default function PlayPage({
 
       </div>
     
+
+    {/* Pop-up element that will generate when game is over */}
+
+
+    {activePopUp ? (
+      
+        <div className='endGame'>
+
+          <div className='gameOverTitle'>Game Over</div>
+          <div className='retryButton'>Retry?</div>
+
+        </div>
+      
+      ):(
+
+        <></>
+    
+      )
+    
+    }
+
   </>
   );
 }

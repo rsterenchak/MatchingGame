@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-/*   border: 1px solid red;  */
+  border: 1px solid red; 
 
 }
 
@@ -672,7 +672,7 @@ body {
   border: 1px solid rgba(255, 0, 0, 0);
   z-index: 0;
   height: 100%;
-
+  
   overflow: visible;
 
 }
@@ -972,7 +972,7 @@ body {
   width: 190px;
   cursor: pointer;
   background-color: white;
-  border: 1px solid red;
+
 }
 
 
@@ -990,7 +990,7 @@ body {
 
 .cardFront {
   border-radius: 7px;
-  border: 1px solid red;
+
 
 }
 
@@ -1066,6 +1066,133 @@ body {
 .highScoreValue {
   color: white;
 }
+
+.endGame {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  top: 25vh;
+  left: 28vw;
+  height: 400px;
+  width: 500px;
+
+  gap: 20px;
+  font-family: 'customFont1';
+}
+
+.gameOverTitle {  
+  font-size: 45px;
+}
+
+.retryButton {
+  display: flex;
+  border-radius: 17px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  width: 160px;
+  height: 55px;
+  margin: 2px;
+  justify-content: center;
+  border: 3px solid black;
+  background-color: yellow;
+  cursor: pointer;
+  grid-area: musicBlock3;
+  
+}
+
+
+.retryButton:hover {
+
+
+  animation: 0.5s change-color5 1 normal forwards; 
+  
+}
+
+@keyframes change-color5 {
+  from {
+    background-color: yellow;
+  }
+
+  to {
+    font-size: 28px;
+    width: 170px;
+    height: 65px;  
+    background-color: yellow;
+
+  }
+}
+
+.retryButton:before {
+  content: '';
+/*   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000); */
+  background: linear-gradient(45deg, yellow, rgb(179, 179, 0), yellow,  rgb(179, 179, 0), yellow,  rgb(179, 179, 0));
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing5 20s linear infinite;
+
+
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+  border-radius: 15px;
+  
+}
+
+.retryButton:active {
+  color: #000;
+  
+}
+
+.retryButton:active:after {
+  background: transparent;
+  
+}
+
+.retryButton:hover:before {
+  opacity: 1;
+}
+
+.retryButton:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+  
+  
+}
+
+@keyframes glowing5 {
+  0% { 
+      background-position: 0 0;
+
+  }
+  50% {
+      background-position: 400% 0;
+
+     }
+  100% {
+       background-position: 0 0;
+
+     }
+}
+
+
 
 
 /** Mobile HomePage Warping */

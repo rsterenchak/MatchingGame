@@ -13,7 +13,10 @@ export default function Card({
   setPickedArray,
   isShown,
   isScore,
-  setScore
+  setScore,
+  isPopUp,
+  setPopUp,
+  style
 
 }) {
 
@@ -75,7 +78,14 @@ export default function Card({
       if(isPickedArray.includes(item)){
       
         // > end game  
-        console.log('Game is over...');
+        console.log('Game is over...exists in the picked array');
+
+        // need to generate an 'end game retry screen'
+        // include pop-up, You scored #/#. Would you like to play again?
+        setPopUp(true);
+        // include retry button which will reset score
+
+        return;
 
       }
       
@@ -84,10 +94,16 @@ export default function Card({
        
         // > add to picked array (state), increment score (state) 
         let newlyPickedArray = isPickedArray;
+        let incrementedScore = isScore + 1;
+
+        newlyPickedArray.push(item);
 
         setPickedArray(newlyPickedArray);
 
-        // ****** START BACK UP RIGHT HERE w/ incremeneting the score (setScore) ********
+
+        setScore(incrementedScore);
+        console.log(incrementedScore);
+        
       
       }
     }
@@ -95,8 +111,14 @@ export default function Card({
     // > else if it hasn't been shown
     else{
     
-      // > end game 
-    
+      // > end game  
+      console.log('Game is over...card was never shown');
+
+      // need to generate an 'end game retry screen'
+      setPopUp(true);
+
+
+      return;
     }
 
     // Verify if game is over
@@ -117,6 +139,7 @@ export default function Card({
             <div 
               className='card'
               onClick={() => handleCardClick()}
+              style={style}
             >
                         
               <div className='cardFront'>{item.name}</div>
