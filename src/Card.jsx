@@ -16,7 +16,9 @@ export default function Card({
   setScore,
   isPopUp,
   setPopUp,
-  style
+  style,
+  isHighScore,
+  setHighScore
 
 }) {
 
@@ -83,7 +85,12 @@ export default function Card({
         // need to generate an 'end game retry screen'
         // include pop-up, You scored #/#. Would you like to play again?
         setPopUp(true);
-        // include retry button which will reset score
+
+        if(isScore > isHighScore){
+
+          setHighScore(isScore);
+  
+        }
 
         return;
 
@@ -117,6 +124,11 @@ export default function Card({
       // need to generate an 'end game retry screen'
       setPopUp(true);
 
+      if(isScore > isHighScore){
+
+        setHighScore(isScore);
+
+      }
 
       return;
     }

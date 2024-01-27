@@ -251,10 +251,13 @@ export default function PlayPage({
   const [activePopUp, setActivePopUp] = useState(false);
 
   const [activeScore, setActiveScore] = useState(0);
+  const [activeHighScore, setActiveHighScore] = useState(0);
 
   const [isSide, setSide] = useState(false); // regular array
 
   const [isHovered, setIsHovered] = useState(false); // going to use to for disabling 'hover' on all button elements when game over popup appears
+
+  const [isMobileLayout, setMobileLayout] = useState(false); // used for turning off/on mobile layout
 
   const boxStyle = {
     backgroundImage: `url(${background})`,
@@ -404,6 +407,8 @@ export default function PlayPage({
       isPopUp={activePopUp}
       setPopUp={setActivePopUp}
       style={popUpStyle}
+      isHighScore={activeHighScore}
+      setHighScore={setActiveHighScore}
     />
     
   );
@@ -421,12 +426,22 @@ export default function PlayPage({
       setScore={setActiveScore}
       isPopUp={activePopUp}
       setPopUp={setActivePopUp}  
-      style={popUpStyle}          
+      style={popUpStyle} 
+      isHighScore={activeHighScore}
+      setHighScore={setActiveHighScore}               
     />
     
   );
 
-  
+  function resetGame(){
+
+    console.log('Runs reset game');
+    setActiveScore(0);
+    setActivePickedArray([]);
+    setActiveShown(activeShuffledArray);
+    setActivePopUp(false);
+
+  }
 
 // used for initial shuffle - runs once during cleanup
   useEffect(() => {
@@ -510,7 +525,10 @@ export default function PlayPage({
 
                   <div className='portfolioText2'>@rsterenchak</div>
 
-                  <div className='portfolioIcon2'>
+                  <div 
+                    className='portfolioIcon2'
+                    style={popUpStyle}
+                  >
 
                     <img className='gitIcon' src={gitIcon}></img>
 
@@ -579,7 +597,7 @@ export default function PlayPage({
             <div className='highScoreElement'>
 
               <div className='highScoreText'>High Score: </div>
-              <div className='highScoreValue'>&nbsp;16</div>
+              <div className='highScoreValue'>&nbsp;{activeHighScore}</div>
 
             </div>
 
@@ -599,7 +617,10 @@ export default function PlayPage({
         <div className='endGame'>
 
           <div className='gameOverTitle'>Game Over</div>
-          <div className='retryButton'>Retry?</div>
+          <div 
+            className='retryButton'
+            onClick={() => resetGame()}
+          >Retry?</div>
 
         </div>
       

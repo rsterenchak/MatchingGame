@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 1px solid red; 
+/*   border: 1px solid red;  */
 
 }
 
@@ -972,6 +972,7 @@ body {
   width: 190px;
   cursor: pointer;
   background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -1075,11 +1076,12 @@ body {
   justify-content: center;
   background-color: white;
   border-radius: 20px;
-  top: 25vh;
-  left: 28vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 400px;
   width: 500px;
-
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
   gap: 20px;
   font-family: 'customFont1';
 }
