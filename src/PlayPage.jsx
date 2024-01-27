@@ -59,7 +59,7 @@ function RunGamePlay({
 
     }
 
-    console.log(randomArrayPositions); // prints random positions
+    // console.log(randomArrayPositions); // prints random positions
 
     let newlyShuffledArray = []
 
@@ -104,14 +104,14 @@ function RunGamePlay({
 
     useEffect(() => {
 
-      console.log('Play effect');
+      // console.log('Play effect');
 
       shuffleArray();
 
 
       return () => {
 
-        console.log('Play cleanup');
+        // console.log('Play cleanup');
 
         
       };
@@ -354,12 +354,13 @@ export default function PlayPage({
   
   }
   
+
+
+  // **** WORKING HERE  - shown cards are being added after every shuffle, throwing off the handleclick check *******
   // Sets new cards to shuffledArray state in PlayPage
   function shuffleArray(){
 
     const randomArrayPositions = [];
-
-    // console.log('runs shuffle array');
 
     let counter = 0;
 
@@ -412,7 +413,8 @@ export default function PlayPage({
 
     setActiveShown(newlyShownArray);
 
-    // console.log(newlyShownArray);
+
+    console.log(newlyShownArray);
 
     setActiveShuffledArray(newlyShuffledArray);
 
@@ -487,7 +489,7 @@ export default function PlayPage({
 
   function resetGame(){
 
-    console.log('Runs reset game');
+    // console.log('Runs reset game');
     setActiveScore(0);
     setActivePickedArray([]);
     setActiveShown(activeShuffledArray);
@@ -502,9 +504,9 @@ export default function PlayPage({
 
     return () => {   
 
-      console.log('Play cleanup - PlayPage');
+      // console.log('Play cleanup - PlayPage');
       shuffleArray();
-
+      
         
     };
   }, [])
@@ -516,7 +518,7 @@ export default function PlayPage({
 
     const key = setInterval(() => {
 
-      console.log('setSide true');
+      // console.log('setSide true');
       setSide(true);
 
     }, 1000);
@@ -524,7 +526,7 @@ export default function PlayPage({
 
     return () => {
       
-      console.log('setSide false');
+      // console.log('setSide false');
       setSide(false);
       clearInterval(key);
       // console.log(activeStandardArray);

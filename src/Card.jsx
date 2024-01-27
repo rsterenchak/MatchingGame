@@ -22,7 +22,7 @@ export default function Card({
 
 }) {
 
-  console.log(item);
+  // console.log(item);
 
 /**
  * 'Card Generation Logic' - 1/23 - *** Currently working ***
@@ -70,6 +70,8 @@ export default function Card({
     // Note -> upon card shuffle all cards need to be added to the shown array/state
 
     // When card is clicked, 
+
+
 
     // > check if card has been shown
     if(isShown.includes(item)){
