@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-/*   border: 1px solid red;  */
+  border: 1px solid red; 
 
 }
 
@@ -1225,13 +1225,20 @@ body {
 
 /* smartphones, iPhone, portrait 480x320 phones */ 
 @media (min-width:320px)  {
+  .musicBlock3 {
 
-  
-  
+    width: 50px;
+    height: 45px;
+    margin-top: 10px;
+
   }
+  .musicBlock2 {
 
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
-@media (min-width:481px)  {
+    width: 50px;
+    height: 45px;
+    margin-top: 10px;
+
+  }
 
   .logoSection3 {
     display: flex;
@@ -1243,8 +1250,8 @@ body {
     align-items: center;
     object-fit: contain;
     gap: 20px;
-    width: 470px;
-    
+    width: 410px;
+
 
   }
   
@@ -1255,8 +1262,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    height: 155px;
-    width: 95px;
+    height: 125px;
+    width: 75px;
     cursor: pointer;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -1264,8 +1271,8 @@ body {
   }
 
   .cardBack {
-    height: 155px;
-    width: 95px;
+    height: 125px;
+    width: 75px;
     border-radius: 7px;
     border: 1px solid blue;
   
@@ -1281,26 +1288,127 @@ body {
     align-items: center;
     object-fit: contain;
     gap: 20px;
-    width: 470px;
+    width: 410px;
     
 
   }
   .highScoreElement {
-    height: 50px;  
-    width: 210px;
-    font-size: 20px;
+    height: 40px;  
+    width: 170px;
+    font-size: 16px;
   }
 
   .currentScoreElement {
-    height: 80px;
-    width: 200px;
-    font-size: 20px;
+    height: 65px;
+    width: 160px;
+    font-size: 16px;
+  }
+  
+
+}
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+@media (min-width:481px)  {
+
+  .musicBlock3 {
+
+    width: 50px;
+    height: 45px;
+    margin-top: 10px;
+
+  }
+
+  .musicBlock2 {
+
+    width: 50px;
+    height: 45px;
+    margin-top: 10px;
+
+  }
+
+  .logoSection3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    gap: 20px;
+    width: 410px;
+
+
+  }
+  
+  .card {
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 125px;
+    width: 75px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  
+  }
+
+  .cardBack {
+    height: 125px;
+    width: 75px;
+    border-radius: 7px;
+    border: 1px solid blue;
+  
+  }
+
+  .logoSection4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    gap: 20px;
+    width: 410px;
+    
+
+  }
+  .highScoreElement {
+    height: 40px;  
+    width: 170px;
+    font-size: 16px;
+  }
+
+  .currentScoreElement {
+    height: 65px;
+    width: 160px;
+    font-size: 16px;
   }
   
 
 }
 @media (min-width:641px)  {
    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+   .musicBlock3 {
+
+    width: 60px;
+    height: 55px;
+    margin-top: 10px;
+
+  }
+
+  .musicBlock2 {
+
+    width: 60px;
+    height: 55px;
+    margin-top: 10px;
+
+  }
 
    .logoSection3 {
     display: flex;
@@ -1375,6 +1483,28 @@ body {
 @media (min-width:961px)  {
 
   
+  .musicBlock3 {
+    display: flex;
+    border-radius: 50%;
+    position: relative;
+    width: 60px;
+    height: 55px;
+    margin-top: 10px;
+    justify-content: center;
+    border: 3px solid black;
+    background-color: yellow;
+    cursor: pointer;
+    grid-area: musicBlock3;
+  }
+
+  .musicBlock2 {
+
+    width: 60px;
+    height: 55px;
+    margin-top: 10px;
+
+  }
+
    .logoSection3 {
     display: flex;
     flex-direction: row;
@@ -1435,6 +1565,20 @@ body {
 /* big landscape tablets, laptops, and desktops */ 
 @media (min-width:1025px) { 
 
+  .musicBlock3 {
+    display: flex;
+    border-radius: 50%;
+    position: relative;
+    width: 60px;
+    height: 55px;
+    margin-top: 10px;
+    justify-content: center;
+    border: 3px solid black;
+    background-color: yellow;
+    cursor: pointer;
+    grid-area: musicBlock3;
+  }
+
   .logoSection3 {
     display: flex;
     flex-direction: row;
@@ -1494,6 +1638,28 @@ body {
 /* hi-res laptops and desktops */
 @media (min-width:1281px) { 
    
+  .musicBlock3 {
+    display: flex;
+    border-radius: 50%;
+    position: relative;
+    width: 60px;
+    height: 55px;
+    margin-top: 10px;
+    justify-content: center;
+    border: 3px solid black;
+    background-color: yellow;
+    cursor: pointer;
+    grid-area: musicBlock3;
+  }
+
+  .musicBlock2 {
+
+    width: 60px;
+    height: 55px;
+    margin-top: 10px;
+
+  }
+
   .logoSection3 {
     display: flex;
     flex-direction: row;
