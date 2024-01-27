@@ -236,6 +236,7 @@ export default function PlayPage({
     }
   ];
 
+  const mediaQuery = window.matchMedia("(max-width: 1290px)");
 
   const [activeStandardArray, setActiveStandardArray] = useState(dataArray); // regular array
   const [activeShuffledArray, setActiveShuffledArray] = useState([]); // Regular Array
@@ -581,25 +582,32 @@ export default function PlayPage({
 
           </div>
           
-          <div className='currentScoreSection'>
-
-            <div className='currentScoreElement'>
-
-              <div className='currentScoreText'>Current <br></br>Score:</div>
-              <div className='currentScoreValue'>&nbsp;{activeScore}/16</div>
-
-            </div>
-
-          </div>
+          {/* Delete Section - no longer needed */}
+{/*           <div className='currentScoreSection'></div> */}
 
           <div className='highScoreSection'>
 
-            <div className='highScoreElement'>
+            <div className='scoreSection1'>
+              <div className='highScoreElement'>
 
-              <div className='highScoreText'>High Score: </div>
-              <div className='highScoreValue'>&nbsp;{activeHighScore}</div>
+                <div className='highScoreText'>High Score: </div>
+                <div className='highScoreValue'>&nbsp;{activeHighScore}</div>
+
+              </div>
+            </div>
+
+            <div className='scoreSection2'>
+
+              <div className='currentScoreElement'>
+
+                <div className='currentScoreText'>Current <br></br>Score:</div>
+                <div className='currentScoreValue'>&nbsp;{activeScore}/16</div>
+
+              </div>
 
             </div>
+
+
 
           </div>
 
