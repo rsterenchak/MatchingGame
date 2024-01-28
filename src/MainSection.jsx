@@ -277,8 +277,8 @@ export default function MainSection() {
 
     return () => {
       async function fetchData() {
-        // let url = 'https://dragonball-api.com/api/characters?page=1&limit=16';
-        let url = process.env.DBZ_KEY;
+        let url = 'https://dragonball-api.com/api/characters?page=1&limit=16';
+        // let url = process.env.DBZ_KEY;
 
         // issue getting new fetch calls
 
