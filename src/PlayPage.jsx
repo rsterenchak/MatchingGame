@@ -136,88 +136,6 @@ export default function PlayPage({
 
   
 
-/**
- * 'Card Generation Logic' - 1/23 - *** Currently working ***
- * 
- * - Will most likely need to take place in a useEffect hook
- * - the max amount of turns until game is beaten is 16 (the amount of cards in array) 
- * - Load 16 cards into array as objects with pertaining information (name, image link, id(unique id))
- * - Shuffle array
- * - Show 8 cards
- * - you will need three arrays, 
- *    - regular array
- *    - show array
- *    - shown array
- *    - picked array
- * - every turn do these things (starting with first turn),
- * 
- *    - >>>> Shuffle regular array <<<<
- * 
- *    - store first 8 cards into - show array
- *    - make sure 'show array' contains at least 1 unpicked card (regular array - picked array) = unpicked array
- *    - if all cards are picked (repeat 'Shuffle regular array') 
- * 
- *    - display those cards - show array
- *    - pick card
- *    - verify card isn't in the picked array
- *    - if it isn't in the picked array, add it to - picked array CONTINUE GAME (+ score)
- *    - else if it is, stop game, user lost. END GAME (0 score increase)
- * 
- *    - >>>> Shuffle regular array <<<<
- * 
- * 
- */
-
-/* let lastResponse = '';
- */
-/* async function pullCharacters(value) {
-  let url = 'https://dragonball-api.com/api/characters?page=1&limit=' + value;
-
-
-  // issue getting new fetch calls
-
-  try {
-    let response = await fetch(url, {mode: 'cors'});
-  
-
-    if(!response.ok){
-    
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    
-    }
-
-
-    let forecast = await response.json();
-    
-    lastResponse = forecast;
-
-    console.log(lastResponse);
-
-    // validInput();
-    // changeWeatherInfo(alldays).validInput();
-
-    return lastResponse;
-
-      } 
-  catch(err) {
-    // catches errors both in fetch and response.json
-    
-    // need function call to indexChanges that signals invalid input to user
-    // invalidInput();
-    // changeWeatherInfo(alldays).invalidInput();
-
-    // alert(err);
-    console.log(err);
-
-    return lastResponse;
-
-  }
-
-}
- */
-// let newArray = pullCharacters(16);
-// setActiveStandardArray(newArray.items);
-
 
 
   const dataArray = [
@@ -310,6 +228,10 @@ export default function PlayPage({
 
   const [isInitialTurn, setInitialTurn] = useState(false);
 
+  const [activePositions, setActivePositions] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+
+  const [isArrayVerified, setArrayVerified] = useState(false);
+
   const boxStyle = {
     backgroundImage: `url(${background})`,
     backgroundPosition: 'center',
@@ -355,8 +277,28 @@ export default function PlayPage({
   }
   
 
+  function verifyArray(random, available){
 
-  // **** WORKING HERE  - shown cards are being added after every shuffle, throwing off the handleclick check *******
+    let counter = 0;
+
+    while(counter < available.length){
+
+      if(random.includes(available[counter])){
+
+        return true;
+      }
+      else{
+
+        counter += 1;
+
+      }
+    }
+
+    return false;
+
+  }
+
+
   // Sets new cards to shuffledArray state in PlayPage
   function shuffleArray(){
 
@@ -364,6 +306,10 @@ export default function PlayPage({
     let counter = 0;
 
     let newlyShownArray = activeShown;
+
+    // activePositions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+    let currentlyAvailablePositions = activePositions; 
 
     // pre-add cards
     if(isInitialTurn){
@@ -392,19 +338,20 @@ export default function PlayPage({
 
       setActiveShown(newlyShownArray);
 
-      console.log('Cards from after initial set up');
+      // console.log('Cards from after initial set up');
       console.log(newlyShownArray);
 
       counter = 0;
 
     }
 
-    const randomArrayPositions = [];
+    let randomArrayPositions = [];
 
-    // Generates non-duplicate array positions
-    while(counter < ((activeStandardArray.length)/2)){
+    // Generates non-duplicate array positions - ***** Needs to keep track of unpicked array positions *****
+    while((counter < ((activeStandardArray.length)/2))){
 
-      let newPos = randomIntFromInterval(0, activeStandardArray.length - 1);
+      let newPos = randomIntFromInterval(0, activeStandardArray.length - 1); 
+
 
       if(randomArrayPositions.includes(newPos)){
 
@@ -415,11 +362,29 @@ export default function PlayPage({
 
         randomArrayPositions.push(newPos);
 
-        counter += 1;
-      
+        let result = verifyArray(randomArrayPositions, currentlyAvailablePositions);
+
+        if((counter < ((activeStandardArray.length)/2) - 1) && (result === false)){
+
+
+          counter = 0;
+          randomArrayPositions = [];
+
+        }  
+        else{
+
+          counter += 1;
+        
+        }
+
       }
 
+
+
     }
+  
+
+    // setArrayVerified(false);
 
     let newlyShuffledArray = []
 
@@ -524,6 +489,8 @@ export default function PlayPage({
       isHighScore={activeHighScore}
       setHighScore={setActiveHighScore}
       startInitialTurn={setInitialTurn}
+      isPositions={activePositions}
+      setPositions={setActivePositions}
     />
     
   );
@@ -545,7 +512,9 @@ export default function PlayPage({
       style={popUpStyle} 
       isHighScore={activeHighScore}
       setHighScore={setActiveHighScore}
-      startInitialTurn={setInitialTurn}               
+      startInitialTurn={setInitialTurn}   
+      isPositions={activePositions}
+      setPositions={setActivePositions}            
     />
     
   );
@@ -763,3 +732,128 @@ export default function PlayPage({
   </>
   );
 }
+
+
+
+
+
+      /* 
+      if(randomArrayPositions.includes(newPos)){
+
+        // console.log('Duplicate digit');
+
+      }
+      else{
+
+        randomArrayPositions.push(newPos);
+
+        let result = verifyArray(randomArrayPositions); // needs to return true when randomArray includes unpicked items
+
+        if((counter === (((activeStandardArray.length)/2) - 1)) && (result === false)){
+          
+
+          console.log('counter reset');
+          console.log(randomArrayPositions);
+          console.log(counter);
+
+          randomArrayPositions = [];
+          counter = 0;
+
+        }
+        else{
+
+          console.log('counter proceeds');
+
+          counter += 1;
+
+        }
+
+        
+
+
+      
+      } */
+
+
+      /**
+ * 'Card Generation Logic' - 1/23 - *** Currently working ***
+ * 
+ * - Will most likely need to take place in a useEffect hook
+ * - the max amount of turns until game is beaten is 16 (the amount of cards in array) 
+ * - Load 16 cards into array as objects with pertaining information (name, image link, id(unique id))
+ * - Shuffle array
+ * - Show 8 cards
+ * - you will need three arrays, 
+ *    - regular array
+ *    - show array
+ *    - shown array
+ *    - picked array
+ * - every turn do these things (starting with first turn),
+ * 
+ *    - >>>> Shuffle regular array <<<<
+ * 
+ *    - store first 8 cards into - show array
+ *    - make sure 'show array' contains at least 1 unpicked card (regular array - picked array) = unpicked array
+ *    - if all cards are picked (repeat 'Shuffle regular array') 
+ * 
+ *    - display those cards - show array
+ *    - pick card
+ *    - verify card isn't in the picked array
+ *    - if it isn't in the picked array, add it to - picked array CONTINUE GAME (+ score)
+ *    - else if it is, stop game, user lost. END GAME (0 score increase)
+ * 
+ *    - >>>> Shuffle regular array <<<<
+ * 
+ * 
+ */
+
+/* let lastResponse = '';
+ */
+/* async function pullCharacters(value) {
+  let url = 'https://dragonball-api.com/api/characters?page=1&limit=' + value;
+
+
+  // issue getting new fetch calls
+
+  try {
+    let response = await fetch(url, {mode: 'cors'});
+  
+
+    if(!response.ok){
+    
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    
+    }
+
+
+    let forecast = await response.json();
+    
+    lastResponse = forecast;
+
+    console.log(lastResponse);
+
+    // validInput();
+    // changeWeatherInfo(alldays).validInput();
+
+    return lastResponse;
+
+      } 
+  catch(err) {
+    // catches errors both in fetch and response.json
+    
+    // need function call to indexChanges that signals invalid input to user
+    // invalidInput();
+    // changeWeatherInfo(alldays).invalidInput();
+
+    // alert(err);
+    console.log(err);
+
+    return lastResponse;
+
+  }
+
+}
+ */
+// let newArray = pullCharacters(16);
+// setActiveStandardArray(newArray.items);
+

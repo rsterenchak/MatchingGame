@@ -19,7 +19,9 @@ export default function Card({
   style,
   isHighScore,
   setHighScore,
-  startInitialTurn
+  startInitialTurn,
+  isPositions,
+  setPositions
 
 }) {
 
@@ -105,17 +107,30 @@ export default function Card({
       //  > else if it hasn't been picked
       else{
        
+        // console.log(newPositions);
+
         // > add to picked array (state), increment score (state) 
         let newlyPickedArray = isPickedArray;
+        let newPositions = isPositions;
         let incrementedScore = isScore + 1;
+
+        let counter = 0;
 
         newlyPickedArray.push(item);
 
+        let index = newPositions.indexOf(item.id);
+
+        if (index > -1) { // only splice array when item is found
+          newPositions.splice(index, 1); // 2nd parameter means remove one item only
+        }
+
+
+
         setPickedArray(newlyPickedArray);
-
-
+        setPositions(newPositions);
         setScore(incrementedScore);
-        // console.log(incrementedScore);
+        
+
         
       
       }
