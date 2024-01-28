@@ -275,7 +275,12 @@ export default function MainSection() {
 
   useEffect(() => {
 
+    console.log('Runs effect');
+
     return () => {
+
+      console.log('Runs cleanup');
+
       async function fetchData() {
         let url = 'https://dragonball-api.com/api/characters?page=1&limit=16';
         // let url = process.env.DBZ_KEY;
