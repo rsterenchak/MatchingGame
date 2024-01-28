@@ -1,7 +1,6 @@
 {
   "homepage": "http://rsterenchak.github.io/MatchingGame",
   "name": "stackblitz-starters-vyzfen",
-  
   "version": "0.0.0",
   "private": true,
   "dependencies": {
@@ -16,8 +15,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "watch:css": "postcss -w src/css/input.css -o src/css/output.css",
-    "predeploy": "npm run build", 
-    "deploy": "gh-pages -d dist"  
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": {
     "production": [
