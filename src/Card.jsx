@@ -21,7 +21,9 @@ export default function Card({
   setHighScore,
   startInitialTurn,
   isPositions,
-  setPositions
+  setPositions,
+  isResult,
+  setResult
 
 }) {
 
@@ -92,6 +94,7 @@ export default function Card({
         // need to generate an 'end game retry screen'
         // include pop-up, You scored #/#. Would you like to play again?
         // startInitialTurn(false);
+        setResult(false);
         setPopUp(true);
 
         if(isScore > isHighScore){
@@ -99,6 +102,7 @@ export default function Card({
           setHighScore(isScore);
   
         }
+
 
         return;
 
@@ -131,6 +135,22 @@ export default function Card({
         setScore(incrementedScore);
         
 
+        if(incrementedScore === 16){
+          setResult(true);
+          setPopUp(true);
+
+          if(isScore > isHighScore){
+    
+            setHighScore(incrementedScore);
+    
+    
+          }
+    
+
+
+          return;
+
+        }
         
       
       }
@@ -144,18 +164,22 @@ export default function Card({
 
       // need to generate an 'end game retry screen'
       // startInitialTurn(false);
+      setResult(false);
       setPopUp(true);
 
       if(isScore > isHighScore){
 
         setHighScore(isScore);
 
+
       }
+
+
 
       return;
     }
 
-    // Verify if game is over
+    
     
     // if game is not over, shuffle cards and continue
 

@@ -232,6 +232,8 @@ export default function PlayPage({
 
   const [isArrayVerified, setArrayVerified] = useState(false);
 
+  const [isOver, setOver] = useState(false);
+
   const boxStyle = {
     backgroundImage: `url(${background})`,
     backgroundPosition: 'center',
@@ -491,6 +493,8 @@ export default function PlayPage({
       startInitialTurn={setInitialTurn}
       isPositions={activePositions}
       setPositions={setActivePositions}
+      isResult={isOver}
+      setResult={setOver}
     />
     
   );
@@ -514,7 +518,9 @@ export default function PlayPage({
       setHighScore={setActiveHighScore}
       startInitialTurn={setInitialTurn}   
       isPositions={activePositions}
-      setPositions={setActivePositions}            
+      setPositions={setActivePositions} 
+      isResult={isOver}
+      setResult={setOver}           
     />
     
   );
@@ -619,9 +625,9 @@ export default function PlayPage({
                     className='portfolioIcon2'
                     style={popUpStyle}
                   >
-
-                    <img className='gitIcon' src={gitIcon}></img>
-
+                    <a href='https://github.com/rsterenchak' target="_blank">
+                      <img className='gitIcon' src={gitIcon}></img>
+                    </a>
                   </div>
 
 
@@ -710,17 +716,35 @@ export default function PlayPage({
 
 
     {activePopUp ? (
-      
+      <>
+      {isOver ? (
+
         <div className='endGame'>
 
-          <div className='gameOverTitle'>Game Over</div>
+          <div className='gameOverTitle'>You Won!</div>
           <div 
             className='retryButton'
             onClick={() => resetGame()}
           >Retry?</div>
 
         </div>
+      ) : (
+
+        <div className='endGame'>
+
+        <div className='gameOverTitle'>Game Over</div>
+        <div 
+          className='retryButton'
+          onClick={() => resetGame()}
+        >Retry?</div>
+
+        </div>
+      )
       
+      }
+
+      </>
+
       ):(
 
         <></>

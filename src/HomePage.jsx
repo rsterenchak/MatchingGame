@@ -83,9 +83,9 @@ export default function HomePage({
                   <div className='portfolioText'>@rsterenchak</div>
 
                   <div className='portfolioIcon'>
-
-                    <img className='gitIcon' src={gitIcon}></img>
-
+                    <a href='https://github.com/rsterenchak' target="_blank">
+                      <img className='gitIcon' src={gitIcon}></img>
+                    </a>
                   </div>
 
 
