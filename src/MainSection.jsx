@@ -271,7 +271,7 @@ export default function MainSection() {
     };
   }, [])
 
-
+  console.log(activeData);
 
   return (
     
