@@ -8,7 +8,7 @@ import PlayPage from './PlayPage.jsx'
 import homeSong from './assets/DragonBallZ.mp3'
 import playSong from './assets/NamekTheme.mp3'
 
-
+// process.env.DBZ_KEY;
 
 // create component responsible for controlling music
 
@@ -273,14 +273,12 @@ export default function MainSection() {
   }, []) */
 
 
-
-
   useEffect(() => {
 
     return () => {
       async function fetchData() {
-        let url = 'https://dragonball-api.com/api/characters?page=1&limit=16';
-
+        // let url = 'https://dragonball-api.com/api/characters?page=1&limit=16';
+        let url = process.env.DBZ_KEY;
 
         // issue getting new fetch calls
 
