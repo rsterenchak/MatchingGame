@@ -565,11 +565,12 @@ body {
   }
   
   .logoContainer2 {
-    height: 200px;
+    min-height: 200px;
     width: 55vw;
     position: relative;
-    top: -20vh;
-    left: 3vw;
+    top: -19vh;
+    
+    left: 2vw;
     background-image: url('./assets/MatchingGameTitle.svg') ;
     background-repeat: no-repeat;
     background-position: center;
@@ -655,11 +656,11 @@ body {
   }
   
   .logoContainer2 {
-    height: 200px;
+    min-height: 200px;
     width: 55vw;
     position: relative;
-    top: -22vh;
-    left: 3vw;
+    top: -17vh;
+    left: 1vw;
     background-image: url('./assets/MatchingGameTitle.svg') ;
     background-repeat: no-repeat;
     background-position: center;
