@@ -272,18 +272,41 @@ export default function MainSection() {
     };
   }, []) */
 
+
+
+
   useEffect(() => {
 
-    console.log('Runs');
-
     return () => {
-      const fetchData = async () => {
-        const response = await fetch(`https://dragonball-api.com/api/characters?page=1&limit=16`);
-        const newData = await response.json();
-        setActiveData(newData.items);
-        console.log(newData.items);
-  
-      };
+      async function fetchData() {
+        let url = 'https://dragonball-api.com/api/characters?page=1&limit=16';
+
+
+        // issue getting new fetch calls
+
+        try {
+          let response = await fetch(url, {mode: 'cors'});
+        
+
+          if(!response.ok){
+          
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          
+          }
+
+          let forecast = await response.json();
+          setActiveData(forecast.items);
+
+            } 
+
+        catch(err) {
+
+          console.log(err);
+
+
+        }
+
+      }
     
       fetchData();      
 
@@ -294,7 +317,8 @@ export default function MainSection() {
     };
   }, [])
 
-  // console.log(activeData);
+
+ console.log(activeData);
 
   return (
     
