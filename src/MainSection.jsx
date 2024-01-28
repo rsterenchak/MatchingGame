@@ -252,7 +252,29 @@ export default function MainSection() {
 
   const [activeData, setActiveData] = useState([]);
 
+/*   useEffect(() => {
+
+    return () => {
+      const fetchData = async () => {
+        const response = await fetch(`https://dragonball-api.com/api/characters?page=1&limit=16`);
+        const newData = await response.json();
+        setActiveData(newData.items);
+        console.log(newData.items);
+  
+      };
+    
+      fetchData();      
+
+      console.log('Play cleanup - MainSection');
+      
+
+        
+    };
+  }, []) */
+
   useEffect(() => {
+
+    console.log('Runs');
 
     return () => {
       const fetchData = async () => {
