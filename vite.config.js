@@ -6,17 +6,7 @@ export default defineConfig ({
 
   plugins: [react(), jsconfigPaths()],
   server: {
-    port: 3000,
-    open: '/'
+    host: true,
   },
-  preview: {
-	port: 3000
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-    	additionalData: `@import "src/components/global.scss";`
-      }
-    }
-  }
+  
 });
