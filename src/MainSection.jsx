@@ -315,7 +315,7 @@ export default function MainSection() {
     };
   }, [])
 
-
+console.log(process.env.DBZ_KEY);
  console.log(activeData);
 
   return (
