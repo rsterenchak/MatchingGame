@@ -341,7 +341,7 @@ export default function PlayPage({
       setActiveShown(newlyShownArray);
 
       // console.log('Cards from after initial set up');
-      console.log(newlyShownArray);
+      // console.log(newlyShownArray);
 
       counter = 0;
 
@@ -441,8 +441,8 @@ export default function PlayPage({
 
       setInitialTurn(true);
 
-      console.log('Cards from initial set up');
-      console.log(newlyShownArray);
+      // console.log('Cards from initial set up');
+      // console.log(newlyShownArray);
 
     }
 
@@ -533,7 +533,7 @@ export default function PlayPage({
     setActiveShown(activeShuffledArray);
     setActivePopUp(false);
 
-    console.log(activeShuffledArray);
+    // console.log(activeShuffledArray);
 
   }
 
