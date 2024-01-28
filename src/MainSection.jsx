@@ -259,6 +259,7 @@ export default function MainSection() {
         const response = await fetch(`https://dragonball-api.com/api/characters?page=1&limit=16`);
         const newData = await response.json();
         setActiveData(newData.items);
+        console.log(newData.items);
   
       };
     
@@ -271,7 +272,7 @@ export default function MainSection() {
     };
   }, [])
 
-  console.log(activeData);
+  // console.log(activeData);
 
   return (
     
