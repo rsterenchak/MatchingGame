@@ -233,7 +233,7 @@ body {
 .logoSection {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+
   align-items: center;
   object-fit: contain;
   grid-area: logoSection;
@@ -243,7 +243,6 @@ body {
 
   min-height: 400px;
   min-width: 90vw;
-  margin-left: 32px;
   background-image: url('./assets/dragon-ball-image.png') ;
   background-repeat: no-repeat;
   background-position: center;
@@ -263,12 +262,11 @@ body {
 }
 
 .logoContainer2 {
-  min-height: 350px;
-  min-width: 55vw;
-  margin-left: 100px;
+  height: 350px;
+  width: 55vw;
   position: absolute;
 
-  margin-top: -45px;
+
   background-image: url('./assets/MatchingGameTitle.svg') ;
   background-repeat: no-repeat;
   background-position: center;
@@ -412,256 +410,359 @@ body {
 }
 
 
+@media (min-width:320px){
 
-/** Web HomePage Warping */
-@media (max-width: 1100px){
+  .homeSection {
+    margin: 0px;
+    padding: 0px;  
 
-  .logoContainer2 {
-
-    margin-left: 55px;
-
-  }
-
-
-}
-
-/** Web HomePage Warping */
-@media (max-height: 1100px){
-
-  .logoContainer2 {
-
-    margin-left: 75px;
-
-
-  }
-  
-}
-
-/** Mobile HomePage Warping */
-@media screen and (max-width: 1224px) {
-
-  .outerSection {
-    display: grid;
-    grid-template-rows: 1fr 4fr 6fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    'navSection'
-    'logoSection'
-    'logoSection2'
-    'inputSection';
-  
-  
-  }
-
-  .logoContainer {
-    min-height: 230px;
-    min-width: 80vw;
-    margin-left: 16px;
-    background-image: url('./assets/dragon-ball-image.png') ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  
-  }
-
-  .logoContainer2 {
-    min-height: 240px;
-    min-width: 50vw;
-    position: absolute;
     z-index: 0;
-    margin-top: -45px;
-    background-image: url('./assets/MatchingGameTitle.svg') ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }  
-
-
-  .fightButton {
-
-    cursor: pointer;
-
-  }
-
-
-
-}
-
-@media screen and (max-height: 1224px) {
-
-  body {
-
-    background-size: 2000px; 
-
-  }
-
-  .outerSection {
-    display: grid;
-    grid-template-rows: 1fr 4fr 5fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    'navSection'
-    'logoSection'
-    'logoSection2'
-    'inputSection';
     
   }
 
+  .outerSection {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 0.8fr 1.2fr 1fr 0.8fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'navSection'
+    'logoSection'
+    'logoSection2'
+    'inputSection'
+    ;
+
+  
+  }
+
+  .navSection {
+    display: flex;
+    flex-direction: row;
+    grid-area: navSection;
+  }
+  
+  .logoSection {
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: logoSection;
+  }
+
   .logoContainer {
+    
+    min-height: 130px;
+    
 
-    min-height: 230px;
-    min-width: 90vw;
-
-    margin-left: 16px;
     background-image: url('./assets/dragon-ball-image.png') ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
   
   }
+  
+  .logoSection2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  
+    object-fit: contain;
+    grid-area: logoSection2;
 
+  }
+  
   .logoContainer2 {
-    min-height: 240px;
-    min-width: 55vw;
-    position: absolute;
-    z-index: 0;
-
+    height: 200px;
+    width: 55vw;
+    position: relative;
+    top: -20vh;
+    left: 5vw;
     background-image: url('./assets/MatchingGameTitle.svg') ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-  }  
+  }
 
   .inputSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-/*   
-    height: 70vh */
+    grid-area: inputSection;
+   
   }
-
-  .fightButton {
-
-    cursor: pointer;
-
-  }
-
+  
 
 }
 
-@media screen and (max-width: 650px) {
+@media (min-width:481px) {
 
-  .outerSection {
-    display: grid;
-    grid-template-rows: 1fr 4fr 6fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    'navSection'
-    'logoSection'
-    'logoSection2'
-    'inputSection';
-  
-  
-  }
 
-  .logoContainer {
-    min-height: 230px;
-    min-width: 80vw;
-    margin-left: 16px;
-    background-image: url('./assets/dragon-ball-image.png') ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  
-  }
+  .homeSection {
+    margin: 0px;
+    padding: 0px;  
 
-  .logoContainer2 {
-    min-height: 200px;
-    min-width: 50vw;
-    position: absolute;
     z-index: 0;
-    margin-top: -85px;
-    background-image: url('./assets/MatchingGameTitle.svg') ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }  
-
-
-  .fightButton {
-
-    cursor: pointer;
-
-  }
-
-
-
-}
-
-@media screen and (max-height: 900px) {
-
-  body {
-
-    background-size: 2000px; 
-
-  }
-
-  .outerSection {
-    display: grid;
-    grid-template-rows: 1fr 3fr 4fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    'navSection'
-    'logoSection'
-    'logoSection2'
-    'inputSection';
     
   }
 
+  .outerSection {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 0.8fr 1.4fr 1fr 0.8fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'navSection'
+    'logoSection'
+    'logoSection2'
+    'inputSection'
+    ;
+  
+
+  
+  }
+
+  .navSection {
+    display: flex;
+    flex-direction: row;
+    grid-area: navSection;
+
+  }
+  
+  .logoSection {
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: logoSection;
+
+  }
+
   .logoContainer {
+    
+    min-height: 180px;
+    
 
-    min-height: 230px;
-    min-width: 90vw;
-
-    margin-left: 16px;
     background-image: url('./assets/dragon-ball-image.png') ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
   
   }
+  
+  .logoSection2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  
+    object-fit: contain;
+    grid-area: logoSection2;
 
+  }
+  
   .logoContainer2 {
-    min-height: 240px;
-    min-width: 55vw;
-    position: absolute;
-    z-index: 0;
-    margin-top: -55px;
+    height: 200px;
+    width: 55vw;
+    position: relative;
+    top: -20vh;
+    left: 3vw;
     background-image: url('./assets/MatchingGameTitle.svg') ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-  }  
+  }
 
   .inputSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-/*   
-    height: 70vh */
+    grid-area: inputSection;
+   
   }
+  
 
-  .fightButton {
-
-    cursor: pointer;
-
-  }
 
 
 }
 
+@media (min-width:961px) {
+
+
+  .homeSection {
+    margin: 0px;
+    padding: 0px;  
+
+    z-index: 0;
+    
+  }
+
+  .outerSection {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 0.8fr 1.6fr 1fr 0.8fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'navSection'
+    'logoSection'
+    'logoSection2'
+    'inputSection'
+    ;
+  
+  
+  }
+
+  .navSection {
+    display: flex;
+    flex-direction: row;
+    grid-area: navSection;
+
+  }
+  
+  .logoSection {
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: logoSection;
+
+  }
+
+  .logoContainer {
+    
+    min-height: 220px;
+    
+
+    background-image: url('./assets/dragon-ball-image.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  
+  }
+  
+  .logoSection2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  
+    object-fit: contain;
+    grid-area: logoSection2;
+  }
+  
+  .logoContainer2 {
+    height: 200px;
+    width: 55vw;
+    position: relative;
+    top: -22vh;
+    left: 3vw;
+    background-image: url('./assets/MatchingGameTitle.svg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .inputSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: inputSection;  
+  }
+  
+
+
+
+}
+
+@media (min-width:1281px) {
+
+
+  .homeSection {
+    margin: 0px;
+    padding: 0px;  
+
+    z-index: 0;
+    
+  }
+
+  .outerSection {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 0.8fr 1.6fr 1fr 0.8fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'navSection'
+    'logoSection'
+    'logoSection2'
+    'inputSection'
+    ;
+  
+  }
+
+  .navSection {
+    display: flex;
+    flex-direction: row;
+    grid-area: navSection;
+  }
+  
+  .logoSection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: logoSection;
+  }
+
+  .logoContainer {
+    
+    min-height: 320px;
+    
+
+    background-image: url('./assets/dragon-ball-image.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  
+  }
+  
+  .logoSection2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  
+    object-fit: contain;
+    grid-area: logoSection2;
+  }
+  
+  .logoContainer2 {
+    height: 330px;
+    width: 575px;
+    position: relative;
+    top: -17vh;
+    left: 1vw;
+    background-image: url('./assets/MatchingGameTitle.svg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .inputSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: inputSection;  
+  }
+  
+
+
+
+}
 
 /** PlayPage Stylings Section */
 

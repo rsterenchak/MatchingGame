@@ -109,8 +109,7 @@ export default function HomePage({
 
           </div>
           
-          <div 
-            className='inputSection'
+          <div className='inputSection'
             onClick={() => setupPage()}  
           >
 
