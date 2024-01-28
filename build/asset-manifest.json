@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.8467d04b.css",
-    "main.js": "/static/js/main.7d4f244e.js",
+    "main.css": "/static/css/main.ced26212.css",
+    "main.js": "/static/js/main.74be8f79.js",
     "static/media/NamekTheme.mp3": "/static/media/NamekTheme.aefb8d2342601307d0dc.mp3",
     "static/media/kame-house.jpg": "/static/media/kame-house.10d629db1b699ba79c11.jpg",
     "static/media/DragonBallZ.mp3": "/static/media/DragonBallZ.02c2c09b2e20a385b23c.mp3",
@@ -16,11 +16,11 @@
     "static/media/github.svg": "/static/media/github.550985caaa8859d4b95ffb977ce9d9af.svg",
     "static/media/musical-notes.svg": "/static/media/musical-notes.0b00f0043c47a114964cfea42fc68351.svg",
     "index.html": "/index.html",
-    "main.8467d04b.css.map": "/static/css/main.8467d04b.css.map",
-    "main.7d4f244e.js.map": "/static/js/main.7d4f244e.js.map"
+    "main.ced26212.css.map": "/static/css/main.ced26212.css.map",
+    "main.74be8f79.js.map": "/static/js/main.74be8f79.js.map"
   },
   "entrypoints": [
-    "static/css/main.8467d04b.css",
-    "static/js/main.7d4f244e.js"
+    "static/css/main.ced26212.css",
+    "static/js/main.74be8f79.js"
   ]
 }
