@@ -14,6 +14,7 @@
 }
 
 body {
+
   margin: 0px;
   padding: 0px;
   font-family: system-ui, sans-serif;
@@ -23,7 +24,7 @@ body {
 .homeSection {
   margin: 0px;
   padding: 0px;  
-  height: 100%;
+  height: 100vh;
   position: relative;
   
   z-index: 0;
@@ -774,7 +775,7 @@ body {
   position: relative;
   border: 1px solid rgba(255, 0, 0, 0);
   z-index: 0;
-  height: 100%;
+  height: 100vh;
   
   overflow: visible;
 
