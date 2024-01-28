@@ -308,7 +308,7 @@ export default function PlayPage({
 
   const [isHovered, setIsHovered] = useState(false); // going to use to for disabling 'hover' on all button elements when game over popup appears
 
-  const [isMobileLayout, setMobileLayout] = useState(false); // used for turning off/on mobile layout
+  const [isInitialTurn, setInitialTurn] = useState(false);
 
   const boxStyle = {
     backgroundImage: `url(${background})`,
@@ -360,9 +360,46 @@ export default function PlayPage({
   // Sets new cards to shuffledArray state in PlayPage
   function shuffleArray(){
 
-    const randomArrayPositions = [];
 
     let counter = 0;
+
+    let newlyShownArray = activeShown;
+
+    // pre-add cards
+    if(isInitialTurn){
+
+      // Adds previous set of cards 
+      while(counter < activeShuffledArray.length){
+
+
+        // if card is not already in the newlyShownArray push it onto the array
+        if(newlyShownArray.includes(activeShuffledArray[counter])){
+
+          // console.log('Already exists on array');
+
+        }
+        else{
+
+          newlyShownArray.push(activeShuffledArray[counter]);
+
+        }
+
+        counter += 1;
+
+
+      }    
+
+
+      setActiveShown(newlyShownArray);
+
+      console.log('Cards from after initial set up');
+      console.log(newlyShownArray);
+
+      counter = 0;
+
+    }
+
+    const randomArrayPositions = [];
 
     // Generates non-duplicate array positions
     while(counter < ((activeStandardArray.length)/2)){
@@ -385,7 +422,7 @@ export default function PlayPage({
     }
 
     let newlyShuffledArray = []
-    let newlyShownArray = activeShown;
+
 
     counter = 0;
 
@@ -394,29 +431,53 @@ export default function PlayPage({
 
       newlyShuffledArray.push(activeStandardArray[randomArrayPositions[counter]]);
 
-      // if card is not already in the newlyShownArray push it onto the array
-      if(newlyShownArray.includes(activeStandardArray[randomArrayPositions[counter]])){
-
-        // console.log('Already exists on array');
-
-      }
-      else{
-
-        newlyShownArray.push(activeStandardArray[randomArrayPositions[counter]]);
-
-      }
 
       counter += 1;
 
 
     }
 
-    setActiveShown(newlyShownArray);
-
-
-    console.log(newlyShownArray);
 
     setActiveShuffledArray(newlyShuffledArray);
+
+
+    counter = 0;
+
+    // Initial set up for shown cards
+    if(isInitialTurn === false){
+
+      newlyShownArray = activeShown;
+
+
+    // Adds previous set of cards 
+      while(counter < newlyShuffledArray.length){
+
+
+        // if card is not already in the newlyShownArray push it onto the array
+        if(newlyShownArray.includes(newlyShuffledArray[counter])){
+
+          // console.log('Already exists on array');
+
+        }
+        else{
+
+          newlyShownArray.push(newlyShuffledArray[counter]);
+
+        }
+
+        counter += 1;
+
+
+      }    
+
+      setActiveShown(newlyShownArray);
+
+      setInitialTurn(true);
+
+      console.log('Cards from initial set up');
+      console.log(newlyShownArray);
+
+    }
 
     let topRowArray =[];
     let bottomRowArray =[];
@@ -462,6 +523,7 @@ export default function PlayPage({
       style={popUpStyle}
       isHighScore={activeHighScore}
       setHighScore={setActiveHighScore}
+      startInitialTurn={setInitialTurn}
     />
     
   );
@@ -482,7 +544,8 @@ export default function PlayPage({
       setPopUp={setActivePopUp}  
       style={popUpStyle} 
       isHighScore={activeHighScore}
-      setHighScore={setActiveHighScore}               
+      setHighScore={setActiveHighScore}
+      startInitialTurn={setInitialTurn}               
     />
     
   );
@@ -494,6 +557,8 @@ export default function PlayPage({
     setActivePickedArray([]);
     setActiveShown(activeShuffledArray);
     setActivePopUp(false);
+
+    console.log(activeShuffledArray);
 
   }
 
