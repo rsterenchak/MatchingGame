@@ -657,10 +657,10 @@ body {
   }
   
   .logoContainer2 {
-    min-height: 200px;
+    min-height: 210px;
     width: 55vw;
     position: relative;
-    top: -17vh;
+    top: -14vh;
     left: 1vw;
     background-image: url('./assets/MatchingGameTitle.svg') ;
     background-repeat: no-repeat;
