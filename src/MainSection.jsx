@@ -252,56 +252,6 @@ export default function MainSection() {
 
   const [activeData, setActiveData] = useState([]);
 
-
-/*   useEffect(() => {
-
-    console.log('Runs effect');
-
-    return () => {
-
-      console.log('Runs cleanup');
-
-      async function fetchData() {
-        let url = 'https://dragonball-api.com/api/characters?page=1&limit=16';
-        // let url = process.env.DBZ_KEY;
-
-        // issue getting new fetch calls
-
-        try {
-          let response = await fetch(url, {mode: 'cors'});
-        
-
-          if(!response.ok){
-          
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          
-          }
-
-          let forecast = await response.json();
-          setActiveData(forecast.items);
-
-            } 
-
-        catch(err) {
-
-          console.log(err);
-
-
-        }
-
-      }
-    
-      fetchData();      
-
-      console.log('Play cleanup - MainSection');
-      
-
-        
-    };
-  }, [])
- */
-
-
   const pulledData = [
     {
         "id": 1,
@@ -497,7 +447,76 @@ export default function MainSection() {
     }
 ]
 
-setActiveData(pulledData);
+
+
+/*   useEffect(() => {
+
+    console.log('Runs effect');
+
+    return () => {
+
+      console.log('Runs cleanup');
+
+      async function fetchData() {
+        let url = 'https://dragonball-api.com/api/characters?page=1&limit=16';
+        // let url = process.env.DBZ_KEY;
+
+        // issue getting new fetch calls
+
+        try {
+          let response = await fetch(url, {mode: 'cors'});
+        
+
+          if(!response.ok){
+          
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          
+          }
+
+          let forecast = await response.json();
+          setActiveData(forecast.items);
+
+            } 
+
+        catch(err) {
+
+          console.log(err);
+
+
+        }
+
+      }
+    
+      fetchData();      
+
+      console.log('Play cleanup - MainSection');
+      
+
+        
+    };
+  }, [])
+ */
+
+ useEffect(() => {
+
+    console.log('Runs effect');
+
+    return () => {
+
+      setActiveData(pulledData);
+  
+
+      console.log('Play cleanup - MainSection');
+      
+
+        
+    };
+  }, [])
+ 
+
+
+
+
 
  console.log(activeData);
 
