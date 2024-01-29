@@ -9,120 +9,6 @@ import gitIcon from './assets/github.svg'
 import cardBack from './assets/dbzCardBack.png'
 
 
-function RunGamePlay({
-  isStandardArray,
-  setShuffledArray,
-  isShuffledArray,
-  setTopRow,
-  setBottomRow    
-  
-}){
-
-  
-  /** Start re-thinking how this will work once music is played
-   *  Seems as though, upon render, this runs the effect, cleanup,
-   *  and then finally the effect once more. Contstruct based on that
-   * 
-   */
-
-  function randomIntFromInterval(min, max) { // min and max included
-
-    return Math.floor(Math.random() * (max - min + 1) + min)
-  
-  }
-  
-  // Sets new cards to shuffledArray state in PlayPage
-  function shuffleArray(){
-
-    const randomArrayPositions = [];
-
-    console.log('runs shuffle array');
-
-    let counter = 0;
-
-    while(counter < ((isStandardArray.length)/2)){
-
-      let newPos = randomIntFromInterval(0, isStandardArray.length - 1);
-
-      if(randomArrayPositions.includes(newPos)){
-
-        // console.log('Duplicate digit');
-
-      }
-      else{
-
-        randomArrayPositions.push(newPos);
-
-        counter += 1;
-      
-      }
-
-    }
-
-    // console.log(randomArrayPositions); // prints random positions
-
-    let newlyShuffledArray = []
-
-    counter = 0;
-
-    while(counter < randomArrayPositions.length){
-      
-      newlyShuffledArray.push(isStandardArray[randomArrayPositions[counter]]);
-
-
-      counter += 1;
-    }
-
-    setShuffledArray(newlyShuffledArray);
-
-    let topRowArray =[];
-    let bottomRowArray =[];
-
-    let maxLength = randomArrayPositions.length;
-    let middleMaxLength = maxLength/2;
-
-    counter = 0;
-
-    while(counter < middleMaxLength){
-
-      topRowArray.push(newlyShuffledArray[counter]);
-
-      counter+= 1;
-    }
-
-    setTopRow(topRowArray);
-
-    while(counter < maxLength){
-
-      bottomRowArray.push(newlyShuffledArray[counter]);
-      counter+= 1;
-    }
-
-    setBottomRow(bottomRowArray);
-
-  }
-
-    useEffect(() => {
-
-      // console.log('Play effect');
-
-      shuffleArray();
-
-
-      return () => {
-
-        // console.log('Play cleanup');
-
-        
-      };
-    }, [])
-
-
-}
-
-
-
-
 
 export default function PlayPage({
   background,
@@ -205,6 +91,7 @@ export default function PlayPage({
     }
   ];
 
+  console.log(isActiveData);
 
   const [activeStandardArray, setActiveStandardArray] = useState(isActiveData); // regular array
   const [activeShuffledArray, setActiveShuffledArray] = useState([]); // Regular Array
@@ -229,8 +116,6 @@ export default function PlayPage({
   const [isInitialTurn, setInitialTurn] = useState(false);
 
   const [activePositions, setActivePositions] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
-
-  const [isArrayVerified, setArrayVerified] = useState(false);
 
   const [isOver, setOver] = useState(false);
 
