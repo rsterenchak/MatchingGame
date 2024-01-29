@@ -449,7 +449,7 @@ export default function MainSection() {
 
 
 
-/*   useEffect(() => {
+   useEffect(() => {
 
     console.log('Runs effect');
 
@@ -495,9 +495,9 @@ export default function MainSection() {
         
     };
   }, [])
- */
 
- useEffect(() => {
+
+/*  useEffect(() => {
 
     console.log('Runs effect');
 
@@ -511,7 +511,7 @@ export default function MainSection() {
 
         
     };
-  }, [])
+  }, []) */
  
 
 
